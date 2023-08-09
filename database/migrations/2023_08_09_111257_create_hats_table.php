@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('hats', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->morphs('commentable');
-            $table->string('content');
+            $table->string('brand')->nullable();
+            $table->string('name');
+            $table->enum('material', ['Plastic', 'Cotton']);
+            $table->enum('color', ['White', 'Black', 'Purple', 'Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green'])->nullable();
+            $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);
             $table->timestamps();
         });
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('hats');
     }
 };
