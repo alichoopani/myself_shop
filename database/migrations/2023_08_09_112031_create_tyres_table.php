@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('brand');
             $table->string('name');
+            $table->string('speed_rating');
+            $table->string('structure');
+            $table->string('load_index');
+            $table->date('create_week');
             $table->unsignedBigInteger('size');
             $table->unsignedBigInteger('weight');
             $table->unsignedBigInteger('width');
