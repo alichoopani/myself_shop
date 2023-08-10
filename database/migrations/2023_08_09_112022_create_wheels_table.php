@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->unsignedBigInteger('size');
+            $table->unsignedBigInteger('weight');
+            $table->unsignedBigInteger('width');
+            $table->unsignedBigInteger('lug_nut_form');
             $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);
             $table->timestamps();

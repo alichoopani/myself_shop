@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tyre extends Model
+class T_Shirt extends Model
 {
     use HasFactory;
 
@@ -14,15 +14,8 @@ class Tyre extends Model
         'brand',
         'name',
         'image',
-        'speed_rating',
-        'structure',
-        'load_index',
-        'create_week',
         'size',
-        'weight',
-        'width',
-        'grip',
-        'top_speed_rating',
+        'color',
         'price',
         'approved',
         'created_at',

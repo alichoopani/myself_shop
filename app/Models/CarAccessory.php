@@ -10,12 +10,14 @@ class CarAccessory extends Model
     use HasFactory;
 
     protected $fillable = [
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
+        'id	',
+        'brand',
+        'name',
+        'image',
+        'car_model',
+        'price',
+        'approved',
+        'created_at',
+        'updated_at'
     ];
 }
