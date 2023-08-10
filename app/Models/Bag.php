@@ -24,4 +24,6 @@ class Bag extends Model
         'created_at',
         'created_at'
     ];
+
+
 }
