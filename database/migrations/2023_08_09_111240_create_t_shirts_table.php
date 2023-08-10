@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('brand')->nullable();
             $table->string('name');
+            $table->string('image');
             $table->enum('size', ['S', 'L', 'XL', 'XXL', '3XL']);
             $table->enum('color', ['White', 'Black', 'Purple', 'Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green'])->nullable();
             $table->unsignedBigInteger('price');

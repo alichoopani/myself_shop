@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('brand')->nullable();
             $table->string('name');
+            $table->string('image');
             $table->unsignedBigInteger('size');
             $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);

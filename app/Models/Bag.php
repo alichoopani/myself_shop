@@ -13,6 +13,7 @@ class Bag extends Model
         'id',
         'brand',
         'name',
+        'image',
         'height',
         'width',
         'length',

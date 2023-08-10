@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('brand')->nullable();
             $table->string('name');
+            $table->string('image');
+            $table->enum('material', ['leather', 'plastic', 'alcantra', 'cloth']);
             $table->unsignedBigInteger('height')->nullable();
             $table->unsignedBigInteger('width')->nullable();
             $table->unsignedBigInteger('length')->nullable();
