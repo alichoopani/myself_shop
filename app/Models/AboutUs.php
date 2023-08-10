@@ -9,5 +9,11 @@ class AboutUs extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'id',
+        'content',
+        'approved',
+        'created_at',
+        'created_at'
+    ];
 }
