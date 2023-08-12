@@ -109,10 +109,11 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
+                        <a href="{{ route('home') }}" class="logo">
+                            <img src="{{ asset('assets/images/logo.png') }}">
                         </a>
                         <!-- ***** Logo End ***** -->
+
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
