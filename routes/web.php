@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::view('/about-us', 'pages.about-us')->name('aboutUs');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

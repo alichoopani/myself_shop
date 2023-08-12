@@ -1,3 +1,2 @@
-<x-guest-layout>
-    Hello world!
-</x-guest-layout>
+<x-app-layout>
+</x-app-layout>
