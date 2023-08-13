@@ -18,8 +18,8 @@ Route::get('/', function () {return view('index');})->name('home');
 
 Route::view('/about-us', 'pages.about-us')->name('aboutUs');
 Route::view('/contact-us', 'pages.contact-us')->name('contactUs');
-//Route::view('', '');
-
+Route::view('/products', 'products.products')->name('products');
+Route::view('/product-detail', 'products.detail')->name('productDetail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
