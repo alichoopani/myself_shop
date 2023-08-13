@@ -20,15 +20,15 @@
                     <li><a href="#">Homepage</a></li>
                     <li><a href="{{ route('aboutUs') }}">About Us</a></li>
                     <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
-                    <li><a href="#">Help</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">
                 <h4>Help &amp; Information</h4>
                 <ul>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Tracking ID</a></li>
+                    <li><a href="{{ route('Faqs') }}">FAQ's</a></li>
+                    <li><a href="#">Help</a></li>
+{{--                    <li><a href="#">Shipping</a></li>--}}
+{{--                    <li><a href="#">Tracking ID</a></li>--}}
                 </ul>
             </div>
             <div class="col-lg-12">
