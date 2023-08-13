@@ -6,6 +6,10 @@ use Livewire\Component;
 
 class ContactUs extends Component
 {
+
+    public $text;
+
+
     public function render()
     {
         return view('livewire.contact-us');
