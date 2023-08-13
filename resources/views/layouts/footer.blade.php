@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="#">Homepage</a></li>
                     <li><a href="{{ route('aboutUs') }}">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
             </div>
