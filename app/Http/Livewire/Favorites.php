@@ -59,6 +59,6 @@ class Favorites extends Component
         elseif ($this->type == 'wheels')
             $this->item = Wheel::query()->select('id')->find($this->itemId);
 
-            return view('livewire.favorites');
+        return view('livewire.favorites');
     }
 }

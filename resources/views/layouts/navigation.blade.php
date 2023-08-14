@@ -116,7 +116,7 @@
 
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="index.html">Products</a></li>
 {{--                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>--}}
 {{--                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>--}}
