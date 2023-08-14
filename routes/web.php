@@ -22,6 +22,8 @@ Route::post('/contact-us', App\Http\Livewire\ContactUs::class)->name('contactUs'
 Route::view('/products', 'products.products')->name('products');
 Route::view('/product-detail', 'products.detail')->name('productDetail');
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
