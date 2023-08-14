@@ -7,25 +7,24 @@ use Livewire\Component;
 class ContactUs extends Component
 {
 
-    public $createContact;
+    public $content;
     public $email;
     public $name;
 
     public function submit()
     {
         $this->validate([
-            'createContact' => 'required',
-            'name' => 'required|max:255',
+            'content' => 'required|max:255',
             'email' => 'required|email'
         ]);
-        \App\Models\ContactUs::create(
+
+        \App\Models\ContactUs::query()->create(
             [
                 'name' => $this->name,
                 'email' => $this->email,
-                'content' => $this->createContact
+                'content' => $this->content
             ]
         );
-        dd($this->email);
 
         $this->reset('createContact');
         session()->flash('message', 'Your message Submitted successfully 😄');

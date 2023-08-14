@@ -18,7 +18,7 @@ Route::get('/', function () {return view('index');})->name('home');
 
 Route::view('/about-us', 'pages.about-us')->name('aboutUs');
 Route::view('/faqs', 'pages.faqs')->name('Faqs');
-Route::view('/contact-us', 'pages.contact-us')->name('contactUs');
+Route::post('/contact-us', App\Http\Livewire\ContactUs::class)->name('contactUs');
 Route::view('/products', 'products.products')->name('products');
 Route::view('/product-detail', 'products.detail')->name('productDetail');
 
