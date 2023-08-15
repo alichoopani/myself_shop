@@ -13,10 +13,10 @@ class ContactUs extends Component
 
     public function submit()
     {
-        $this->validate([
-            'content' => 'required|max:255',
-            'email' => 'required|email'
-        ]);
+//        $this->validate([
+//            'content' => 'required|max:255',
+//            'email' => 'required|email'
+//        ]);
 
         \App\Models\ContactUs::query()->create(
             [

@@ -23,6 +23,11 @@ class PagesController extends Controller
 //            ->where('approved', 1)
 //            ->get();
 
-        return view('pages.faqs', );
+        return view('pages.faqs',);
+    }
+
+    public function contactUs()
+    {
+        return view('pages.contact-us');
     }
 }
