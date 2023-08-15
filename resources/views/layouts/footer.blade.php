@@ -17,8 +17,7 @@
             <div class="col-lg-3">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
+                    <li><a href="{{ route('home') }}">Homepage</a></li>
                     <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                 </ul>
             </div>
@@ -26,8 +25,8 @@
                 <h4>Help &amp; Information</h4>
                 <ul>
                     <li><a href="{{ route('Faqs') }}">FAQ's</a></li>
-                    <li><a href="#">Help</a></li>
-{{--                    <li><a href="#">Shipping</a></li>--}}
+                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
+                    {{--                    <li><a href="#">Shipping</a></li>--}}
 {{--                    <li><a href="#">Tracking ID</a></li>--}}
                 </ul>
             </div>
