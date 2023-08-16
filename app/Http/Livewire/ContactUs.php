@@ -7,16 +7,17 @@ use Livewire\Component;
 class ContactUs extends Component
 {
 
-    public $content;
-    public $email;
     public $name;
+    public $email;
+    public $content;
 
     public function submit()
     {
-//        $this->validate([
-//            'content' => 'required|max:255',
-//            'email' => 'required|email'
-//        ]);
+        $this->validate([
+            'content' => 'required|max:255',
+            'email' => 'required|email',
+            'name' => 'required|max:255'
+        ]);
 
         \App\Models\ContactUs::query()->create(
             [

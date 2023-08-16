@@ -18,7 +18,7 @@ Route::get('/', function () {return view('index');})->name('home');
 
 Route::get('/about-us', 'App\Http\Controllers\PagesController@aboutUs')->name('aboutUs');
 Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
-Route::match(['GET', 'POST'], '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
+Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
 Route::view('/products', 'products.products')->name('products');
 Route::view('/product-detail', 'products.detail')->name('productDetail');
 
