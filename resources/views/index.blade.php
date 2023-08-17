@@ -27,8 +27,8 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Women</h4>
-                                            <span>Best Clothes For Women</span>
+                                            <h4>TYRES</h4>
+                                            <span>--------------</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
@@ -47,8 +47,8 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Men</h4>
-                                            <span>Best Clothes For Men</span>
+                                            <h4>BAGS</h4>
+                                            <span>--------------</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
@@ -67,8 +67,8 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Kids</h4>
-                                            <span>Best Clothes For Kids</span>
+                                            <h4>HATS</h4>
+                                            <span>--------------</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
@@ -87,15 +87,15 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Accessories</h4>
-                                            <span>Best Trend Accessories</span>
+                                            <h4>T-SHIRTS</h4>
+                                            <span>--------------</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
                                                 <h4>Accessories</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="{{ route('tShirts') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,8 +117,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Men's Latest</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Latest Hats</h2>
+                        <span>-------------------------</span>
                     </div>
                 </div>
             </div>
@@ -234,7 +234,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Women's Latest</h2>
+                        <h2>Latest Bags</h2>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Kid's Latest</h2>
+                        <h2>Latest T-Shirts</h2>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
                 </div>
@@ -468,7 +468,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="left-content">
-                        <h2>Explore Our Products</h2>
+                        <h2>Explore Our new Wheels</h2>
                         <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
@@ -476,7 +476,7 @@
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
-                            <a href="products.html">Discover More</a>
+                            <a href="{{ route('wheels') }}">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -513,90 +513,90 @@
     </section>
     <!-- ***** Explore Area Ends ***** -->
 
-    <!-- ***** Social Area Starts ***** -->
-    <section class="section" id="social">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Social Media</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row images">
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Fashion</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-01.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>New</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-02.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Brand</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-03.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Makeup</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-04.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Leather</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-05.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Bag</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="assets/images/instagram-06.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Social Area Ends ***** -->
+{{--    <!-- ***** Social Area Starts ***** -->--}}
+{{--    <section class="section" id="social">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="section-heading">--}}
+{{--                        <h2>Social Media</h2>--}}
+{{--                        <span>Details to details is what makes Hexashop different from the other themes.</span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="container">--}}
+{{--            <div class="row images">--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>Fashion</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-01.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>New</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-02.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>Brand</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-03.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>Makeup</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-04.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>Leather</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-05.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-2">--}}
+{{--                    <div class="thumb">--}}
+{{--                        <div class="icon">--}}
+{{--                            <a href="http://instagram.com">--}}
+{{--                                <h6>Bag</h6>--}}
+{{--                                <i class="fa fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <img src="assets/images/instagram-06.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- ***** Social Area Ends ***** -->--}}
 
 {{--    <!-- ***** Subscribe Area Starts ***** -->--}}
 {{--    <div class="subscribe">--}}

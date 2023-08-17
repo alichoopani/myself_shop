@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tuning_parts', function (Blueprint $table) {
+        Schema::create('headers', function (Blueprint $table) {
             $table->id();
             $table->string('brand');
             $table->string('name');
             $table->string('image');
             $table->string('car_model');
             $table->unsignedBigInteger('price');
+            $table->boolean('warranty')->default(0);
             $table->boolean('approved')->default(1);
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tuning_parts');
+        Schema::dropIfExists('headers');
     }
 };

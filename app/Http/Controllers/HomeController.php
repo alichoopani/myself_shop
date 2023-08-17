@@ -46,4 +46,24 @@ class HomeController extends Controller
             'hats' => $hats
         ]);
     }
+
+    public function latestBags()
+    {
+        return view('index');
+    }
+
+    public function latestHats()
+    {
+        return view('index');
+    }
+
+    public function latestWheels()
+    {
+        return view('index');
+    }
+
+    public function latestTShirts()
+    {
+        return view('index');
+    }
 }

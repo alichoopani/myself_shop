@@ -113,7 +113,6 @@
                             <img src="{{ asset('assets/images/logo.png') }}">
                         </a>
                         <!-- ***** Logo End ***** -->
-
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">Home</a></li>
@@ -140,6 +139,13 @@
 {{--                            </li>--}}
                             <li class="scroll-to-section"><a href="index.html">Explore</a></li>
                         </ul>
+
+                        <!-- ***** login Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{{ route('login') }}" class="active">login</a></li>
+                        </ul>
+                        <!-- ***** login Ends ***** -->
+
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
