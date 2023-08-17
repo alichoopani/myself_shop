@@ -10,10 +10,10 @@
                     <div class="left-content">
                         <div class="thumb">
                             <div class="inner-content">
-                                <h4>We Are Hexashop</h4>
-                                <span>Awesome, clean &amp; creative HTML5 Template</span>
+                                <h4>We Are HooniShop</h4>
+                                <span>-----------</span>
                                 <div class="main-border-button">
-                                    <a href="#">Purchase Now!</a>
+                                    <a href="{{ route('wheels') }}">Purchase Now!</a>
                                 </div>
                             </div>
                             <img src="assets/images/left-banner-image.jpg" alt="">
@@ -35,7 +35,7 @@
                                                 <h4>Women</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="{{ route('tyres') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -55,7 +55,7 @@
                                                 <h4>Men</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="{{ route('bags') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                                 <h4>Kids</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="{{ route('hats') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>

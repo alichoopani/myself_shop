@@ -14,11 +14,10 @@ class ContactUs extends Component
     public function submit()
     {
         $this->validate([
-            'content' => 'required|max:255',
+            'content' => 'required',
             'email' => 'required|email',
             'name' => 'required|max:255'
         ]);
-
         \App\Models\ContactUs::query()->create(
             [
                 'name' => $this->name,
@@ -26,8 +25,7 @@ class ContactUs extends Component
                 'content' => $this->content
             ]
         );
-
-        $this->reset('createContact');
+        $this->reset('content');
         session()->flash('message', 'Your message Submitted successfully 😄');
     }
 
