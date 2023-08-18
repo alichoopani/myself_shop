@@ -113,38 +113,46 @@
                             <img src="{{ asset('assets/images/logo.png') }}">
                         </a>
                         <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Products</a></li>
-{{--                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>--}}
-{{--                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>--}}
-                            <li class="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
-                                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
-{{--                                    <li><a href="products.html"></a></li>--}}
-{{--                                    <li><a href="single-product.html">Single Product</a></li>--}}
-                                    <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
-                                </ul>
-                            </li>
-{{--                            <li class="submenu">--}}
-{{--                                <a href="javascript:;">Features</a>--}}
-{{--                                <ul>--}}
-{{--                                    <li><a href="#">Features Page 1</a></li>--}}
-{{--                                    <li><a href="#">Features Page 2</a></li>--}}
-{{--                                    <li><a href="#">Features Page 3</a></li>--}}
-{{--                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
-                        </ul>
 
                         <!-- ***** login Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{ route('login') }}" class="active">login</a></li>
+                            <li class="scroll-to-section"><a href="{{ route('login') }}">login</a></li>
+                            <li class="scroll-to-section"><a href="{{ route('register') }}">Register</a></li>
                         </ul>
                         <!-- ***** login Ends ***** -->
+
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">Home</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Products</a>
+                                <ul>
+                                    <li><a href="{{ route('wheels') }}">Wheels</a></li>
+                                    <li><a href="{{ route('tyres') }}">Tyres</a></li>
+                                    <li><a href="{{ route('bags') }}">Bags</a></li>
+                                    <li><a href="{{ route('tShirts') }}">T-Shirts</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Tuning Parts</a>
+                                <ul>
+                                    <li><a href="">Headers</a></li>
+                                    <li><a href="">Cam Shafts</a></li>
+                                    <li><a href="">Crank Shaft</a></li>
+                                    <li><a href="">ECU</a></li>
+                                    <li><a href="">Pistons</a></li>
+                                    <li><a href="">Retainers</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
+                        </ul>
 
                         <a class='menu-trigger'>
                             <span>Menu</span>

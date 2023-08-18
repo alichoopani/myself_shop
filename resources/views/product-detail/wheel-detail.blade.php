@@ -1,4 +1,4 @@
-@section('title', 'Detail')
+@section('title', 'wheel')
 
 <x-app-layout>
 

@@ -1,4 +1,4 @@
-@section('title', 'T-Shirt')
+@section('title', 'Phone Cover')
 
 <x-app-layout>
 
