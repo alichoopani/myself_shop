@@ -21,7 +21,19 @@ class TShirt extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+
+    protected $fillable = [
+        'id',
+        'brand',
+        'name',
+        'image',
+        'size',
+        'color',
+        'price',
+        'approved',
+        'created_at',
+        'updated_at'
+    ];
     // protected $hidden = [];
 
     /*
