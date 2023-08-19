@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class CrankShaftController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('products.crankshaft');
+    }
 }
