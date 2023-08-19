@@ -16,7 +16,7 @@
                                     <a href="{{ route('wheels') }}">Purchase Now!</a>
                                 </div>
                             </div>
-                            <img src="assets/images/left-banner-image.jpg" alt="">
+                            <img src="{{ asset('storage/banners/wheels.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -32,14 +32,14 @@
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Women</h4>
+                                                <h4>Tyres</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="{{ route('tyres') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="assets/images/baner-right-image-01.jpg">
+                                        <img src="{{ asset('storage/banners/Michelin tire and rim_i_0_i.jpg') }}">
                                     </div>
                                 </div>
                             </div>
@@ -52,14 +52,14 @@
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Men</h4>
+                                                <h4>Bags</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="{{ route('bags') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="assets/images/baner-right-image-02.jpg">
+                                        <img src="{{ asset('storage/banners/backpacks-2048px-9904.jpg') }}">
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +72,14 @@
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Kids</h4>
+                                                <h4>Hats</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="{{ route('hats') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="assets/images/baner-right-image-03.jpg">
+                                        <img src="{{ asset('storage/banners/hat.jpeg') }}">
                                     </div>
                                 </div>
                             </div>
@@ -92,17 +92,117 @@
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Accessories</h4>
+                                                <h4>T-SHIRTS</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="{{ route('tShirts') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="assets/images/baner-right-image-04.jpg">
+                                        <img src="{{ asset('storage/banners/t-shirt.jpeg') }}">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>TYRES</h4>
+                                            <span>--------------</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Tyres</h4>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                <div class="main-border-button">
+                                                    <a href="{{ route('tyres') }}">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ asset('storage/banners/Michelin tire and rim_i_0_i.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>BAGS</h4>
+                                            <span>--------------</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Bags</h4>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                <div class="main-border-button">
+                                                    <a href="{{ route('bags') }}">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ asset('storage/banners/backpacks-2048px-9904.jpg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>HATS</h4>
+                                            <span>--------------</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Hats</h4>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                <div class="main-border-button">
+                                                    <a href="{{ route('hats') }}">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ asset('storage/banners/hat.jpeg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>T-SHIRTS</h4>
+                                            <span>--------------</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>T-SHIRTS</h4>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
+                                                <div class="main-border-button">
+                                                    <a href="{{ route('tShirts') }}">Discover More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="{{ asset('storage/banners/t-shirt.jpeg') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>We Are HooniShop</h4>
+                                <span>-----------</span>
+                                <div class="main-border-button">
+                                    <a href="{{ route('wheels') }}">Purchase Now!</a>
+                                </div>
+                            </div>
+                            <img src="{{ asset('storage/banners/wheels.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
