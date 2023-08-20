@@ -20,7 +20,7 @@ Route::get('/about-us', 'App\Http\Controllers\PagesController@aboutUs')->name('a
 Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
 Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
 Route::get('/wheels', 'App\Http\Controllers\WheelsController@index')->name('wheels');
-//Route::get('/wheel/{id}', 'App\Http\Controllers\WheelsController@index')->name('wheelDetail');
+Route::get('/wheel/{id}', 'App\Http\Controllers\WheelsController@wheelDetail')->name('wheelDetail');
 Route::get('/bags', 'App\Http\Controllers\BagsController@index')->name('bags');
 //Route::get('/bag/{id}', 'App\Http\Controllers\BagsController@index')->name('bagDetail');
 Route::get('/tyres', 'App\Http\Controllers\TyresController@index')->name('tyres');
