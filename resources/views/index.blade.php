@@ -121,11 +121,11 @@
                                                 <h4>Tyres</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('tyres') }}">Discover More</a>
+                                                    <a href="{{ route('retainers') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/Michelin tire and rim_i_0_i.jpg') }}">
+                                        <img src="{{ asset('storage/banners/retainer.png') }}">
                                     </div>
                                 </div>
                             </div>
@@ -141,11 +141,11 @@
                                                 <h4>Bags</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('bags') }}">Discover More</a>
+                                                    <a href="{{ route('valves') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/backpacks-2048px-9904.jpg') }}">
+                                        <img src="{{ asset('storage/banners/engine-valves.jpeg') }}">
                                     </div>
                                 </div>
                             </div>
@@ -161,11 +161,11 @@
                                                 <h4>Hats</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('hats') }}">Discover More</a>
+                                                    <a href="{{ route('crankShafts') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/hat.jpeg') }}">
+                                        <img src="{{ asset('storage/banners/seat-crankshaft.avif') }}">
                                     </div>
                                 </div>
                             </div>
@@ -181,11 +181,11 @@
                                                 <h4>T-SHIRTS</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('tShirts') }}">Discover More</a>
+                                                    <a href="{{ route('camShafts') }}">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/t-shirt.jpeg') }}">
+                                        <img src="{{ asset('storage/banners/camshaft-cat-cams-opel-2-0-hydr-298-degree-cih-cast-iron.avif') }}">
                                     </div>
                                 </div>
                             </div>
@@ -199,10 +199,10 @@
                                 <h4>We Are HooniShop</h4>
                                 <span>-----------</span>
                                 <div class="main-border-button">
-                                    <a href="{{ route('wheels') }}">Purchase Now!</a>
+                                    <a href="{{ route('headers') }}">Purchase Now!</a>
                                 </div>
                             </div>
-                            <img src="{{ asset('storage/banners/wheels.jpg') }}" alt="">
+                            <img src="{{ asset('storage/banners/headers.webp') }}" alt="">
                         </div>
                     </div>
                 </div>
