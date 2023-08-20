@@ -24,7 +24,7 @@ Route::get('/wheel/{id}', 'App\Http\Controllers\WheelsController@wheelDetail')->
 Route::get('/bags', 'App\Http\Controllers\BagsController@index')->name('bags');
 //Route::get('/bag/{id}', 'App\Http\Controllers\BagsController@index')->name('bagDetail');
 Route::get('/tyres', 'App\Http\Controllers\TyresController@index')->name('tyres');
-//Route::get('/tyre/{id}', 'App\Http\Controllers\TyresController@index')->name('tyreDetail');
+Route::get('/tyre/{id}', 'App\Http\Controllers\TyresController@tyreDetail')->name('tyreDetail');
 Route::get('/hats', 'App\Http\Controllers\HatsController@index')->name('hats');
 //Route::get('/hat/{id}', 'App\Http\Controllers\HatsController@index')->name('hatDetail');
 Route::get('/t-shirts', 'App\Http\Controllers\TShirtsController@index')->name('tShirts');
