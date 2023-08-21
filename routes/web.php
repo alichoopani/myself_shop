@@ -33,7 +33,7 @@ Route::get('/hats', 'App\Http\Controllers\HatsController@index')->name('hats');
 Route::get('/hat/{id}', 'App\Http\Controllers\HatsController@hatDetail')->name('hatDetail');
 
 Route::get('/t-shirts', 'App\Http\Controllers\TShirtsController@index')->name('tShirts');
-//Route::get('/t-shirt/{id}', 'App\Http\Controllers\T-ShirtController@index')->name('tShirtDetail');
+Route::get('/t-shirt/{id}', 'App\Http\Controllers\TShirtsController@tShirtDetail')->name('tShirtDetail');
 
 Route::get('/headers', 'App\Http\Controllers\HeadersController@index')->name('headers');
 //Route::get('/headers/{id}', 'App\Http\Controllers\HeadersController@index')->name('headersDetail');
