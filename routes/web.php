@@ -42,20 +42,19 @@ Route::get('/ecus', 'App\Http\Controllers\EcuController@index')->name('ecus');
 Route::get('/ecu/{id}', 'App\Http\Controllers\EcuController@ecuDetail')->name('ecuDetail');
 
 Route::get('/cam-shafts','App\Http\Controllers\CamShaftController@index')->name('camShafts');
-//Route::get('/cam-shaft/{id}','App\Http\Controllers\CamShaftController@index')->name('camShaftDetail');
+Route::get('/cam-shaft/{id}','App\Http\Controllers\CamShaftController@camShaftDetail')->name('camShaftDetail');
 
 Route::get('/crank-shafts','App\Http\Controllers\CrankShaftController@index')->name('crankShafts');
-//Route::get('/crank-shaft/{id}','App\Http\Controllers\CamShaftController@index')->name('camShafts');
+Route::get('/crank-shaft/{id}','App\Http\Controllers\CrankShaftController@crankShaftDetail')->name('crankShaftDetail');
 
 Route::get('/valves','App\Http\Controllers\ValveController@index')->name('valves');
-//Route::get('/valve/{id}','App\Http\Controllers\ValveController@index')->name('valveDetail');
+Route::get('/valve/{id}','App\Http\Controllers\ValveController@index')->name('valveDetail');
 
 Route::get('/pistons','App\Http\Controllers\PistonController@index')->name('pistons');
-//Route::get('/piston/{id}','App\Http\Controllers\ValveController@index')->name('pistonDetail');
+Route::get('/piston/{id}','App\Http\Controllers\PistonController@')->name('pistonDetail');
 
 Route::get('/retainers','App\Http\Controllers\RetainerController@index')->name('retainers');
-//Route::get('/retainer/{id}','App\Http\Controllers\RetainerController@index')->name('retainerDetail');
-
+Route::get('/retainer/{id}','App\Http\Controllers\RetainerController@index')->name('retainerDetail');
 
 
 Route::get('/dashboard', function () {
