@@ -48,13 +48,13 @@ Route::get('/crank-shafts','App\Http\Controllers\CrankShaftController@index')->n
 Route::get('/crank-shaft/{id}','App\Http\Controllers\CrankShaftController@crankShaftDetail')->name('crankShaftDetail');
 
 Route::get('/valves','App\Http\Controllers\ValveController@index')->name('valves');
-Route::get('/valve/{id}','App\Http\Controllers\ValveController@index')->name('valveDetail');
+Route::get('/valve/{id}','App\Http\Controllers\ValveController@valveDetail')->name('valveDetail');
 
 Route::get('/pistons','App\Http\Controllers\PistonController@index')->name('pistons');
-Route::get('/piston/{id}','App\Http\Controllers\PistonController@')->name('pistonDetail');
+Route::get('/piston/{id}','App\Http\Controllers\PistonController@pistonDetail')->name('pistonDetail');
 
 Route::get('/retainers','App\Http\Controllers\RetainerController@index')->name('retainers');
-Route::get('/retainer/{id}','App\Http\Controllers\RetainerController@index')->name('retainerDetail');
+Route::get('/retainer/{id}','App\Http\Controllers\RetainerController@retainerDetail')->name('retainerDetail');
 
 
 Route::get('/dashboard', function () {
