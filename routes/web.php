@@ -20,6 +20,12 @@ Route::get('/about-us', 'App\Http\Controllers\PagesController@aboutUs')->name('a
 Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
 Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
 
+Route::get('/car-accessories', 'App\Http\Controllers\AccessoryController@carAccessoryIndex')->name('carAccessory');
+Route::get('/car-accessory/{id}', 'App\Http\Controllers\AccessoryController@carAccessoryDetail')->name('carAccessoryDetail');
+
+Route::get('/phone-accessories', 'App\Http\Controllers\AccessoryController@phoneAccessoryIndex')->name('phoneAccessory');
+Route::get('/phone-accessory/{id}', 'App\Http\Controllers\AccessoryController@phoneAccessoryDetail')->name('phoneAccessoryDetail');
+
 Route::get('/wheels', 'App\Http\Controllers\WheelsController@index')->name('wheels');
 Route::get('/wheel/{id}', 'App\Http\Controllers\WheelsController@wheelDetail')->name('wheelDetail');
 
