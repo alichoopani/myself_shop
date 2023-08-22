@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hat extends Model
 {
-    use CrudTrait;
     use HasFactory;
 
     protected $fillable = [

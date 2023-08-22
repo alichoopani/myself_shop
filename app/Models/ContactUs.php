@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ContactUs extends Model
 {
-    use CrudTrait;
     use HasFactory;
 
     protected $fillable = [

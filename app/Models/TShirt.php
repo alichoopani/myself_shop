@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TShirt extends Model
 {
-    use CrudTrait;
     use HasFactory;
 
     /*

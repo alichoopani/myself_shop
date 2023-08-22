@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wheel extends Model
 {
-    use CrudTrait;
     use HasFactory;
 
     protected $fillable = [
