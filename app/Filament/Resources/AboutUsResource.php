@@ -23,7 +23,8 @@ class AboutUsResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('content')->required(),
+                Forms\Components\Checkbox::make('approved')->default(1),
             ]);
     }
 
@@ -43,14 +44,14 @@ class AboutUsResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +59,5 @@ class AboutUsResource extends Resource
             'create' => Pages\CreateAboutUs::route('/create'),
             'edit' => Pages\EditAboutUs::route('/{record}/edit'),
         ];
-    }    
+    }
 }

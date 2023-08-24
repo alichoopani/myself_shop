@@ -23,7 +23,24 @@ class BagResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('brand')->required()->label('Brand'),
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\Select::make('material')->required()->label('Material')->options([
+                    'leather' => 'Leather',
+                    'plastic' => 'Plastic',
+                    'alcantra' => 'Alcantara',
+                    'cloth' => 'Cloth'
+                ]),
+                Forms\Components\TextInput::make('height')->required()->label('Height')->numeric(),
+                Forms\Components\TextInput::make('width')->required()->label('Width')->numeric(),
+                Forms\Components\TextInput::make('length')->required()->label('Length')->numeric(),
+                Forms\Components\TextInput::make('weight')->required()->label('Weight')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\Select::make('color')->required()->label('Color')
+                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
+                    ->searchable(),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }
 
@@ -43,14 +60,14 @@ class BagResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +75,5 @@ class BagResource extends Resource
             'create' => Pages\CreateBag::route('/create'),
             'edit' => Pages\EditBag::route('/{record}/edit'),
         ];
-    }    
+    }
 }
