@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ImageResource\Pages;
+namespace App\Filament\Resources\HeadersResource\Pages;
 
-use App\Filament\Resources\ImageResource;
+use App\Filament\Resources\HeadersResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditImage extends EditRecord
+class EditHeaders extends EditRecord
 {
-    protected static string $resource = ImageResource::class;
+    protected static string $resource = HeadersResource::class;
 
     protected function getActions(): array
     {

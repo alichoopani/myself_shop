@@ -23,7 +23,13 @@ class TyreResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('brand')->label('Brand')->required(),
+                Forms\Components\TextInput::make('name')->label('Name')->required(),
+                Forms\Components\FileUpload::make('image')->label('Image')->required(),
+                Forms\Components\TextInput::make('speed_rating')->label('Speed Rating')->required(),
+                Forms\Components\TextInput::make('structure')->label('Structure')->required()->default('Radial'),
+                Forms\Components\TextInput::make('load_index')->label('Load Index')->required(),
+                Forms\Components\DatePicker::make('create_week')->required()->label('Create Week'),
             ]);
     }
 
@@ -43,14 +49,14 @@ class TyreResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +64,5 @@ class TyreResource extends Resource
             'create' => Pages\CreateTyre::route('/create'),
             'edit' => Pages\EditTyre::route('/{record}/edit'),
         ];
-    }    
+    }
 }

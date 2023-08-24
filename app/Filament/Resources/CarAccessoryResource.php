@@ -41,7 +41,7 @@ class CarAccessoryResource extends Resource
                 Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
-                Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty'),
+                Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty')->alignCenter(),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([

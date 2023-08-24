@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TShirtResource\Pages;
-use App\Filament\Resources\TShirtResource\RelationManagers;
-use App\Models\TShirt;
+use App\Filament\Resources\HeadersResource\Pages;
+use App\Filament\Resources\HeadersResource\RelationManagers;
+use App\Models\Headers;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TShirtResource extends Resource
+class HeadersResource extends Resource
 {
-    protected static ?string $model = TShirt::class;
+    protected static ?string $model = Headers::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -26,10 +26,7 @@ class TShirtResource extends Resource
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
                 Forms\Components\FileUpload::make('image')->required()->label('Image'),
-                Forms\Components\Select::make('size')->options(['S', 'L', 'XL', 'XXL', '3XL'])->required()->label('Siza'),
-                Forms\Components\Select::make('color')->required()->label('Color')
-                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
-                    ->searchable(),
+                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
                 Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
@@ -42,8 +39,7 @@ class TShirtResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('size')->label('Size'),
-                Tables\Columns\TextColumn::make('color')->label('Color'),
+                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty')->alignCenter(),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
@@ -69,9 +65,9 @@ class TShirtResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTShirts::route('/'),
-            'create' => Pages\CreateTShirt::route('/create'),
-            'edit' => Pages\EditTShirt::route('/{record}/edit'),
+            'index' => Pages\ListHeaders::route('/'),
+            'create' => Pages\CreateHeaders::route('/create'),
+            'edit' => Pages\EditHeaders::route('/{record}/edit'),
         ];
     }
 }
