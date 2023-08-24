@@ -37,7 +37,12 @@ class CamShaftResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('brand')->label('Brand'),
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
+                Tables\Columns\TextColumn::make('price')->label('Price'),
+                Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //

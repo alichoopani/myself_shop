@@ -44,8 +44,20 @@ class AddressResource extends Resource
     {
         return $table
             ->columns([
-                //
-            ])
+                Tables\Columns\TextColumn::make('user_id'),
+                Tables\Columns\TextColumn::make('province_id')->label('Province'),
+                Tables\Columns\SelectColumn::make('city_id')->label('City'),
+                Tables\Columns\TextColumn::make('postal_code')->label('Postal Code'),
+                Tables\Columns\TextColumn::make('postal_address')->label('Postal Address'),
+                Tables\Columns\TextColumn::make('plate_number')->label('Plate Number'),
+                Tables\Columns\TextColumn::make('floor')->label('Floor'),
+                Tables\Columns\TextColumn::make('latitude'),
+                Tables\Columns\TextColumn::make('longitude'),
+                Tables\Columns\TextColumn::make('receiver_firstname')->label('Receiver Firstname'),
+                Tables\Columns\TextColumn::make('receiver_lastname')->label('Receiver Lastname'),
+                Tables\Columns\TextColumn::make('receiver_cellphone')->label('Receiver Cellphone'),
+                Tables\Columns\CheckboxColumn::make('approved')->default(1)->alignCenter(),
+                ])
             ->filters([
                 //
             ])

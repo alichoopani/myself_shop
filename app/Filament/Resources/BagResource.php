@@ -48,7 +48,16 @@ class BagResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('brand')->label('Brand'),
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('material')->label('Material'),
+                Tables\Columns\TextColumn::make('height')->label('Height'),
+                Tables\Columns\TextColumn::make('width')->label('Width'),
+                Tables\Columns\TextColumn::make('length')->label('Length'),
+                Tables\Columns\TextColumn::make('weight')->label('Weight'),
+                Tables\Columns\TextColumn::make('price')->label('Price'),
+                Tables\Columns\TextColumn::make('color')->label('Color'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //

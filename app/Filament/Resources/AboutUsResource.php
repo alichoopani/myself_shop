@@ -24,7 +24,7 @@ class AboutUsResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('content')->required(),
-                Forms\Components\Checkbox::make('approved')->default(1),
+                Forms\Components\Checkbox::make('approved')->default(1)->a,
             ]);
     }
 
@@ -32,7 +32,8 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('content'),
+                Tables\Columns\CheckboxColumn::make('approved')->alignCenter()
             ])
             ->filters([
                 //

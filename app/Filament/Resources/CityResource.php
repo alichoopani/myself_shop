@@ -37,7 +37,8 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->label('City Name'),
+//                Tables\Columns\TextColumn::make('province_id')->label('Province')
             ])
             ->filters([
                 //

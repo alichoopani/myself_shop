@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CommentResource\Pages;
 use App\Filament\Resources\CommentResource\RelationManagers;
 use App\Models\Comment;
+use Faker\Provider\Text;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -23,7 +24,11 @@ class CommentResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('user_id')->hidden(auth()->id()),
+                Forms\Components\TextInput::make('commentable_type')->required(),
+                Forms\Components\TextInput::make('commentable_id')->required(),
+                Forms\Components\TextInput::make('content')->required()->label('Content'),
+                Forms\Components\Checkbox::make('approved')->default(1)->label('Approved')
             ]);
     }
 
@@ -31,7 +36,8 @@ class CommentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('content')->label('Content'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')
             ])
             ->filters([
                 //
@@ -43,14 +49,14 @@ class CommentResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +64,5 @@ class CommentResource extends Resource
             'create' => Pages\CreateComment::route('/create'),
             'edit' => Pages\EditComment::route('/{record}/edit'),
         ];
-    }    
+    }
 }
