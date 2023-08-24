@@ -23,7 +23,10 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->label('Name')->required(),
+                Forms\Components\TextInput::make('email')->label('E-mail')->email()->required(),
+                Forms\Components\TextInput::make('phone')->label('Phone')->numeric()->nullable(),
+                Forms\Components\TextInput::make('password')->label('Pass')->password()->required(),
             ]);
     }
 
@@ -31,7 +34,9 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('phone')->label('Phone'),
+                Tables\Columns\TextColumn::make('email')->label('E-Mail')
             ])
             ->filters([
                 //
@@ -43,14 +48,14 @@ class UserResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +63,5 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
-    }    
+    }
 }
