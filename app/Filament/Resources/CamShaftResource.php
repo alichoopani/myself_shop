@@ -23,7 +23,13 @@ class CamShaftResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('brand')->required()->label('Brand'),
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
+                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
     }
 
@@ -43,14 +49,14 @@ class CamShaftResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +64,5 @@ class CamShaftResource extends Resource
             'create' => Pages\CreateCamShaft::route('/create'),
             'edit' => Pages\EditCamShaft::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -23,7 +23,13 @@ class CarAccessoryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('brand')->required()->label('Brand'),
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
+                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
     }
 
@@ -43,14 +49,14 @@ class CarAccessoryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +64,5 @@ class CarAccessoryResource extends Resource
             'create' => Pages\CreateCarAccessory::route('/create'),
             'edit' => Pages\EditCarAccessory::route('/{record}/edit'),
         ];
-    }    
+    }
 }
