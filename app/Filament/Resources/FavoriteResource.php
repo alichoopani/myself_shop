@@ -31,7 +31,9 @@ class FavoriteResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('favoriteable_type')->label('Favoriteable Type'),
+                Tables\Columns\TextColumn::make('favoriteable_id')->label('Favoriteable Id'),
+                Tables\Columns\TextColumn::make('user_id')->label('User Id')
             ])
             ->filters([
                 //
@@ -43,14 +45,14 @@ class FavoriteResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +60,5 @@ class FavoriteResource extends Resource
             'create' => Pages\CreateFavorite::route('/create'),
             'edit' => Pages\EditFavorite::route('/{record}/edit'),
         ];
-    }    
+    }
 }

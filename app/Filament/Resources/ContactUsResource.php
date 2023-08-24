@@ -23,7 +23,9 @@ class ContactUsResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('content')->required()->label('Content'),
+                Forms\Components\TextInput::make('email')->required()->label('E-mail')->email(),
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
             ]);
     }
 
@@ -31,7 +33,9 @@ class ContactUsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('content')->label('Content'),
+                Tables\Columns\TextColumn::make('email')->label('E-Mail'),
             ])
             ->filters([
                 //
@@ -43,14 +47,14 @@ class ContactUsResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +62,5 @@ class ContactUsResource extends Resource
             'create' => Pages\CreateContactUs::route('/create'),
             'edit' => Pages\EditContactUs::route('/{record}/edit'),
         ];
-    }    
+    }
 }

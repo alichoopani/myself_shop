@@ -23,7 +23,16 @@ class HatResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('brand')->required()->label('Brand'),
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\Select::make('material')->required()->options(['Plastic', 'Cotton'])->label('Material'),
+                Forms\Components\Select::make('color')->required()->label('Color')
+                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
+                    ->searchable(),
+                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
     }
 
@@ -31,7 +40,12 @@ class HatResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('brand')->label('Brand'),
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
+                Tables\Columns\TextColumn::make('price')->label('Price'),
+                Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //
@@ -43,14 +57,14 @@ class HatResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +72,5 @@ class HatResource extends Resource
             'create' => Pages\CreateHat::route('/create'),
             'edit' => Pages\EditHat::route('/{record}/edit'),
         ];
-    }    
+    }
 }
