@@ -25,7 +25,7 @@ class CityResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\Select::make('province_id')->getSearchResultsUsing(fn (string $search) => Province::query()
+                Forms\Components\Select::make('province_id')->relationship('province', 'name')->getSearchResultsUsing(fn (string $search) => Province::query()
                     ->where('name', 'like', "%{$search}%")
                     ->limit(5)
                     ->pluck('name', 'id'))
@@ -38,7 +38,7 @@ class CityResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('City Name'),
-//                Tables\Columns\TextColumn::make('province_id')->label('Province')
+                Tables\Columns\TextColumn::make('province_id')->label('Province')
             ])
             ->filters([
                 //
