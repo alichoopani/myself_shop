@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AddressResource\Pages;
 use App\Filament\Resources\AddressResource\RelationManagers;
 use App\Models\Address;
+use App\Models\City;
+use App\Models\Province;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -25,8 +27,18 @@ class AddressResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')->hidden(\auth()->id()),
-                Forms\Components\Select::make('province_id')->relationship('province', 'name')->required()->label('Province')->searchable(),
-                Forms\Components\Select::make('city_id')->relationship('city', 'name')->required()->label('City')->searchable(),
+                Forms\Components\Select::make('province_id')->relationship('province', 'name')->required()->label('Province')
+                    ->getSearchResultsUsing(fn (string $search) => Province::query()
+                    ->where('name', 'like', "%{$search}%")
+                    ->limit(5)
+                    ->pluck('name', 'id'))
+                    ->searchable(),
+                Forms\Components\Select::make('city_id')->relationship('city', 'name')->required()->label('City')
+                    ->getSearchResultsUsing(fn (string $search) => City::query()
+                        ->where('name', 'like', "%{$search}%")
+                        ->limit(5)
+                        ->pluck('name', 'id'))
+                        ->searchable(),
                 Forms\Components\TextInput::make('postal_code')->required()->label('Postal Code'),
                 Forms\Components\TextInput::make('postal_address')->required()->label('Postal Address'),
                 Forms\Components\TextInput::make('plate_number')->required()->label('Plate Number'),
