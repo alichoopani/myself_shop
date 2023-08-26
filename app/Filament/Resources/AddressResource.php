@@ -39,15 +39,15 @@ class AddressResource extends Resource
                         ->limit(5)
                         ->pluck('name', 'id'))
                         ->searchable(),
-                Forms\Components\TextInput::make('postal_code')->required()->label('Postal Code'),
+                Forms\Components\TextInput::make('postal_code')->required()->label('Postal Code')->numeric(),
                 Forms\Components\TextInput::make('postal_address')->required()->label('Postal Address'),
                 Forms\Components\TextInput::make('plate_number')->required()->label('Plate Number'),
-                Forms\Components\TextInput::make('floor')->required()->label('Floor'),
+                Forms\Components\TextInput::make('floor')->required()->label('Floor')->numeric(3),
                 Forms\Components\TextInput::make('latitude'),
                 Forms\Components\TextInput::make('longitude'),
                 Forms\Components\TextInput::make('receiver_firstname')->required()->label('Receiver Firstname'),
                 Forms\Components\TextInput::make('receiver_lastname')->required()->label('Receiver Lastname'),
-                Forms\Components\TextInput::make('receiver_cellphone')->required()->label('Receiver Cellphone'),
+                Forms\Components\TextInput::make('receiver_cellphone')->required()->label('Receiver Cellphone')->numeric(11),
                 Forms\Components\Checkbox::make('approved')->default(1),
             ]);
     }
