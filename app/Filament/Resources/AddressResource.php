@@ -25,8 +25,8 @@ class AddressResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')->hidden(\auth()->id()),
-                Forms\Components\Select::make('province_id')->required()->label('Province')->searchable(),
-                Forms\Components\Select::make('city_id')->required()->label('City')->searchable(),
+                Forms\Components\Select::make('province_id')->relationship('province', 'name')->required()->label('Province')->searchable(),
+                Forms\Components\Select::make('city_id')->relationship('city', 'name')->required()->label('City')->searchable(),
                 Forms\Components\TextInput::make('postal_code')->required()->label('Postal Code'),
                 Forms\Components\TextInput::make('postal_address')->required()->label('Postal Address'),
                 Forms\Components\TextInput::make('plate_number')->required()->label('Plate Number'),
