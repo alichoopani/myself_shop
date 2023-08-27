@@ -1,4 +1,4 @@
-@section('title', 'accessory')
+@section('title', 'Accessory | ' . $accessory->brand)
 
 <x-app-layout>
 
@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Single Product Page</h2>
+                        <h2>{{ $accessory->brand }}</h2>
                         <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
                     </div>
                 </div>

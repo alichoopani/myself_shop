@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Latest Products</h2>
+                        <h2>Our Latest Bags</h2>
                     </div>
                 </div>
             </div>
@@ -41,18 +41,12 @@
 {{--                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                     </ul>
                                 </div>
-                                <img src="{{ asset('assets/images/men-01.jpg') }}" alt="">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="image">
                             </div>
                             <div class="down-content">
-                                <a href="{{ route('bagDetail', ['id' => $item->id]) }}">Classic Spring</a>
-                                <span>$120.00</span>
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
+                                <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
+                                <span>{{ $item->name }}</span>
+                                <span>{{ $item->price }} Toman</span>
                             </div>
                         </div>
                     </div>

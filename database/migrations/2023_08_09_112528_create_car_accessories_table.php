@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->string('name');
             $table->string('image');
+            $table->text('description')->nullable();
             $table->string('car_model');
             $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);

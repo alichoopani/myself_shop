@@ -131,6 +131,7 @@
                                     <li><a href="{{ route('tyres') }}">Tyres</a></li>
                                     <li><a href="{{ route('bags') }}">Bags</a></li>
                                     <li><a href="{{ route('tShirts') }}">T-Shirts</a></li>
+                                    <li><a href="{{ route('carAccessory') }}">Car Accessories</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -143,12 +144,12 @@
                             <li class="submenu">
                                 <a href="javascript:;">Tuning Parts</a>
                                 <ul>
-                                    <li><a href="">Headers</a></li>
-                                    <li><a href="">Cam Shafts</a></li>
-                                    <li><a href="">Crank Shaft</a></li>
-                                    <li><a href="">ECU</a></li>
-                                    <li><a href="">Pistons</a></li>
-                                    <li><a href="">Retainers</a></li>
+                                    <li><a href="{{ route('headers') }}">Headers</a></li>
+                                    <li><a href="{{ route('camShafts') }}">Cam Shafts</a></li>
+                                    <li><a href="{{ route('crankShafts') }}">Crank Shaft</a></li>
+                                    <li><a href="{{ route('ecus') }}">ECU</a></li>
+                                    <li><a href="{{ route('pistons') }}">Pistons</a></li>
+                                    <li><a href="{{ route('retainers') }}">Retainers</a></li>
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="index.html">Explore</a></li>

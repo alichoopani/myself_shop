@@ -16,6 +16,7 @@ class CarAccessory extends Model
         'name',
         'image',
         'car_model',
+        'description',
         'price',
         'approved',
         'created_at',
