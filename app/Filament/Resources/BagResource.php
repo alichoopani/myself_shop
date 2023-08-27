@@ -25,20 +25,20 @@ class BagResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/Bags'),
                 Forms\Components\Select::make('material')->required()->label('Material')->options([
                     'leather' => 'Leather',
                     'plastic' => 'Plastic',
                     'alcantra' => 'Alcantara',
                     'cloth' => 'Cloth'
                 ]),
-                Forms\Components\TextInput::make('height')->required()->label('Height')->numeric(),
-                Forms\Components\TextInput::make('width')->required()->label('Width')->numeric(),
-                Forms\Components\TextInput::make('length')->required()->label('Length')->numeric(),
-                Forms\Components\TextInput::make('weight')->required()->label('Weight')->numeric(),
-                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\TextInput::make('height')->required()->label('Height(cm)')->numeric(),
+                Forms\Components\TextInput::make('width')->required()->label('Width(cm)')->numeric(),
+                Forms\Components\TextInput::make('length')->required()->label('Length(cm)')->numeric(),
+                Forms\Components\TextInput::make('weight')->required()->label('Weight(gr)')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
                 Forms\Components\Select::make('color')->required()->label('Color')
-                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
+                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White', 'Brown'])
                     ->searchable(),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
@@ -50,11 +50,8 @@ class BagResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('material')->label('Material'),
-                Tables\Columns\TextColumn::make('height')->label('Height'),
-                Tables\Columns\TextColumn::make('width')->label('Width'),
-                Tables\Columns\TextColumn::make('length')->label('Length'),
-                Tables\Columns\TextColumn::make('weight')->label('Weight'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\TextColumn::make('color')->label('Color'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
