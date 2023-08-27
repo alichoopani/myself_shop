@@ -28,9 +28,9 @@ class CrankShaftResource extends Resource
                 Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/CrankShaft'),
                 Forms\Components\TextInput::make('engine_name')->required()->label('Engine Name'),
                 Forms\Components\Select::make('casting_method')->required()->label('Casting Method')->options(['Forged', 'Cast']),
-                Forms\Components\TextInput::make('weight')->label('Weight')->numeric()->required(),
+                Forms\Components\TextInput::make('weight')->label('Weight(Kg)')->numeric()->required(),
                 Forms\Components\TextInput::make('number_of_cylinder')->label('Number Of Cylinder')->numeric()->required(),
-                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
@@ -42,7 +42,8 @@ class CrankShaftResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
+                Tables\Columns\TextColumn::make('engine_name')->label('Engine Name'),
+                Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
