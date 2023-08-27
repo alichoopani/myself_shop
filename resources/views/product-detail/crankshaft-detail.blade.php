@@ -39,10 +39,7 @@
 {{--                            <li><i class="fa fa-star"></i></li>--}}
 {{--                            <li><i class="fa fa-star"></i></li>--}}
 {{--                        </ul>--}}
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
-                        <div class="quote">
-                            <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
-                        </div>
+                        <span>{{ $crankShaft->casting_method }}</span>
                         <div class="quantity-content">
                             <div class="left-content">
                                 <h6>No. of Orders</h6>
