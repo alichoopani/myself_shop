@@ -17,14 +17,13 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-
     <!-- ***** Product Area Starts ***** -->
     <section class="section" id="product">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="left-images">
-                        <img src="{{ asset('storage/' . $crankShaft->image) }} }}" alt="">
+                        <img src="{{ asset('storage/' . $crankShaft->image) }}" alt="">
 {{--                        <img src="assets/images/single-product-02.jpg" alt="">--}}
                     </div>
                 </div>
@@ -57,7 +56,7 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                        <div class="total">--}}
-{{--                            <h4>Total: $210.00</h4>--}}
+                            <h4>Price : {{ $crankShaft->price }} Toman</h4>
 {{--                            <div class="main-border-button"><a href="#">Add To Cart</a></div>--}}
 {{--                        </div>--}}
                     </div>
