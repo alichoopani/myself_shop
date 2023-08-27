@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
 {
@@ -26,7 +27,11 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('name')->label('Name')->required(),
                 Forms\Components\TextInput::make('email')->label('E-mail')->email()->required(),
                 Forms\Components\TextInput::make('phone')->label('Phone')->numeric()->nullable(),
-                Forms\Components\TextInput::make('password')->label('Pass')->password()->required(),
+                Forms\Components\TextInput::make('password')->label('Password')->password()
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->required(fn (string $context): bool => $context === 'create'),
+                Forms\Components\Checkbox::make('approved')->default(1)->label('Approved')
             ]);
     }
 
@@ -36,7 +41,8 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\TextColumn::make('phone')->label('Phone'),
-                Tables\Columns\TextColumn::make('email')->label('E-Mail')
+                Tables\Columns\TextColumn::make('email')->label('E-Mail'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //

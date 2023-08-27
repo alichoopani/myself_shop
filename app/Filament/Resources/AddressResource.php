@@ -7,6 +7,7 @@ use App\Filament\Resources\AddressResource\RelationManagers;
 use App\Models\Address;
 use App\Models\City;
 use App\Models\Province;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -26,7 +27,12 @@ class AddressResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')->hidden(\auth()->id()),
+                Forms\Components\Select::make('user_id')->relationship('user', 'name')
+                    ->getSearchResultsUsing(fn(string $search) => User::query()
+                    ->where('name', 'like', "%{$search}%")
+                    ->limit(5)
+                    ->pluck('name', 'id'))
+                    ->searchable(),
                 Forms\Components\Select::make('province_id')->relationship('province', 'name')->required()->label('Province')
                     ->getSearchResultsUsing(fn (string $search) => Province::query()
                     ->where('name', 'like', "%{$search}%")
