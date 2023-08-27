@@ -23,8 +23,8 @@ class AboutUsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('content')->required(),
-                Forms\Components\Checkbox::make('approved')->default(1)->a,
+                Forms\Components\Textarea::make('content')->required()->label('Content'),
+                Forms\Components\Checkbox::make('approved')->default(1)->label('Approved'),
             ]);
     }
 
@@ -32,8 +32,8 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('content'),
-                Tables\Columns\CheckboxColumn::make('approved')->alignCenter()
+                Tables\Columns\TextColumn::make('content')->label('Content'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //
