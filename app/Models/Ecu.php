@@ -12,9 +12,8 @@ class Ecu extends Model
     protected $fillable = [
         'id',
         'brand',
-        'name',
         'image',
-        'car_model',
+        'model',
         'price',
         'warranty',
         'approved',
