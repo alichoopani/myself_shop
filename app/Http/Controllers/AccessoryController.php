@@ -20,11 +20,11 @@ class AccessoryController extends Controller
 
     public function carAccessoryDetail($id)
     {
-        $accessory = CarAccessory::query()
+        $carAccessory = CarAccessory::query()
             ->where('approved', 1)
             ->findOrFail((int)$id);
 
-        return view('product-detail.carAccessory-detail', ['accessory' => $accessory]);
+        return view('product-detail.carAccessory-detail', ['carAccessory' => $carAccessory]);
     }
 
     public function phoneAccessoryIndex()
@@ -39,10 +39,10 @@ class AccessoryController extends Controller
 
     public function phoneAccessoryDetail($id)
     {
-        $accessory = PhoneCover::query()
+        $phoneAccessory = PhoneCover::query()
             ->where('approved', 1)
             ->findOrFail((int)$id);
 
-        return view('product-detail.phoneCover-detail', ['accessory' => $accessory]);
+        return view('product-detail.phoneCover-detail', ['phoneAccessory' => $phoneAccessory]);
     }
 }
