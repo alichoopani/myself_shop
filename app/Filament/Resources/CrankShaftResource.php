@@ -24,10 +24,12 @@ class CrankShaftResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
-                Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\TextInput::make('name')->required()->label('Model Name'),
                 Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/CrankShaft'),
                 Forms\Components\TextInput::make('engine_name')->required()->label('Engine Name'),
-                Forms\Components\Select::make('casting_method')->required()->label('Casting Method')->options(['Forged', 'Cast']),
+                Forms\Components\Toggle::make('casting_method')->inline(false)
+                    ->onIcon('heroicon-s-lightning-bolt')
+                    ->required()->label('Forged'),
                 Forms\Components\TextInput::make('weight')->label('Weight(Kg)')->numeric()->required(),
                 Forms\Components\TextInput::make('number_of_cylinder')->label('Number Of Cylinder')->numeric()->required(),
                 Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
@@ -41,7 +43,7 @@ class CrankShaftResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
-                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('name')->label('Model Name'),
                 Tables\Columns\TextColumn::make('engine_name')->label('Engine Name'),
                 Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),

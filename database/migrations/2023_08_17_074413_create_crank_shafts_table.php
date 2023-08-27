@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('name');
             $table->string('image');
-            $table->enum('casting_method', ['Cast', 'Forged']);
+            $table->boolean('casting_method')->default(0);
             $table->string('weight');
             $table->string('number_of_cylinder');
             $table->string('engine_name');
