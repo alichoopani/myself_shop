@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('brand');
             $table->string('name');
             $table->string('image');
-            $table->string('car_model');
+            $table->string('casting_method');
+            $table->string('weight');
+            $table->string('number_of_cylinder');
+            $table->string('engine_name');
             $table->unsignedBigInteger('price');
             $table->boolean('warranty')->default(0);
             $table->boolean('approved')->default(1);

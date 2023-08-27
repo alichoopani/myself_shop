@@ -25,8 +25,11 @@ class CrankShaftResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
-                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/CrankShaft'),
+                Forms\Components\TextInput::make('engine_name')->required()->label('Engine Name'),
+                Forms\Components\Select::make('casting_method')->required()->label('Casting Method')->options(['Forged', 'Cast']),
+                Forms\Components\TextInput::make('weight')->label('Weight')->numeric()->required(),
+                Forms\Components\TextInput::make('number_of_cylinder')->label('Number Of Cylinder')->numeric()->required(),
                 Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)

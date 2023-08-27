@@ -23,9 +23,9 @@ class ContactUsResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('user')->required()->label('Name'),
                 Forms\Components\TextInput::make('content')->required()->label('Content'),
                 Forms\Components\TextInput::make('email')->required()->label('E-mail')->email(),
-                Forms\Components\TextInput::make('name')->required()->label('Name'),
             ]);
     }
 
