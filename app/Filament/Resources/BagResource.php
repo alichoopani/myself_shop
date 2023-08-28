@@ -48,6 +48,7 @@ class BagResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\ImageColumn::make('image')->label('Image'),

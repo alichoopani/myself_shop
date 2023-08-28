@@ -25,6 +25,7 @@ class ECUResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('model')->required()->label('Model'),
+                Forms\Components\Textarea::make('description')->label('Description')->required(),
                 Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/ECUs'),
                 Forms\Components\TextInput::make('price')->required()->label('Price($)')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
@@ -36,6 +37,7 @@ class ECUResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('model')->label('Model'),
                 Tables\Columns\ImageColumn::make('image')->label('Image'),

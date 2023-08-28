@@ -42,6 +42,7 @@ class CrankShaftResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Model Name'),
                 Tables\Columns\TextColumn::make('engine_name')->label('Engine Name'),

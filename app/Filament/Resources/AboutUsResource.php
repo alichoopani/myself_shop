@@ -32,6 +32,7 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('content')->label('Content'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])

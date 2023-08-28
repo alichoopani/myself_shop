@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('image');
             $table->string('model');
+            $table->text('description');
             $table->unsignedBigInteger('price');
             $table->boolean('warranty')->default(0);
             $table->boolean('approved')->default(1);

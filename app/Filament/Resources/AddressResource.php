@@ -62,6 +62,7 @@ class AddressResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('user.name')->label('User'),
                 Tables\Columns\TextColumn::make('province.name')->label('Province'),
                 Tables\Columns\TextColumn::make('city.name')->label('City'),

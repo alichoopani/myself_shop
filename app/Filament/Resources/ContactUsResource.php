@@ -33,6 +33,7 @@ class ContactUsResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\TextColumn::make('content')->label('Content'),
                 Tables\Columns\TextColumn::make('email')->label('E-Mail'),

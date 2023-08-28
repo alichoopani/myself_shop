@@ -14,6 +14,7 @@ class Ecu extends Model
         'brand',
         'image',
         'model',
+        'description',
         'price',
         'warranty',
         'approved',
