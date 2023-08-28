@@ -23,7 +23,9 @@ class FaqResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('content')->label('Content')->required(),
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\FileUpload::make('image')->label('Image')->required()->directory('/faqs'),
+                Forms\Components\Textarea::make('content')->label('Content')->required(),
                 Forms\Components\Checkbox::make('approved')->default(1)->label('Approved')
             ]);
     }
@@ -32,6 +34,8 @@ class FaqResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('title')->label('Title'),
                 Tables\Columns\TextColumn::make('content')->label('Content'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])

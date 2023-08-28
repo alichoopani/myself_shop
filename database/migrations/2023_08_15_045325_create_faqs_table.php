@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('content');
+            $table->string('image');
             $table->string('approved')->default(1);
-            $table->string('content');
             $table->timestamps();
         });
     }

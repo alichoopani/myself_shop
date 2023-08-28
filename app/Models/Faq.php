@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Faq extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'title',
+        'content',
+        'image',
+        'approved',
+        'created_at',
+        'updated_at'
+    ];
 }
