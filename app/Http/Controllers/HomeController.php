@@ -20,8 +20,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $latestBagsHats = Hat::query()
-            ->with('bags')
+        $latestHats = Hat::query()
             ->where('approved', 1)
             ->orderBy('created_at', 'desc')
             ->get();
@@ -32,10 +31,16 @@ class HomeController extends Controller
             ->inRandomOrder()
             ->get();
 
+        $latestBags = Bag::query()
+            ->where('approved', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         return view('index', [
             'tShirts' => $tShirts,
-            'latestBagsHats' => $latestBagsHats,
-            'accessories' => $accessories
+            'latestHats' => $latestHats,
+            'accessories' => $accessories,
+            'latestBags' => $latestBags
         ]);
     }
 }

@@ -217,7 +217,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Latest Hats & Bags </h2>
+                        <h2>Latest Hats</h2>
 {{--                        <span>-------------------------</span>--}}
                     </div>
                 </div>
@@ -228,23 +228,68 @@
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            @foreach($latestBagsHats as $item)
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="{{ route('bagDetail : hatDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            {{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
-                                        </ul>
+                            @foreach($latestHats as $item)
+                                    <div class="item">
+                                        <div class="thumb">
+                                            <div class="hover-content">
+                                                <ul>
+                                                    <li><a href="{{ route('hatDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+{{--                                            <li><a href="#"><i class="fa fa-star"></i></a></li>--}}
+{{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
+                                                </ul>
+                                            </div>
+                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                                        </div>
+                                        <div class="down-content">
+                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
+                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
+                                            <span>$ {{ $item->price }}</span>
+                                        </div>
                                     </div>
-                                    <img src="{{ asset('assets/images/men-01.jpg') }}" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <a href="#">Classic Spring</a>
-                                    <span>$120.00</span>
-                                </div>
-                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Area Ends ***** -->
+
+    <!-- ***** Area Starts ***** -->
+    <section class="section" id="men">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2>Latest Bags</h2>
+{{--                        <span>-------------------------</span>--}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="men-item-carousel">
+                        <div class="owl-men-item owl-carousel">
+                            @foreach($latestBags as $item)
+                                    <div class="item">
+                                        <div class="thumb">
+                                            <div class="hover-content">
+                                                <ul>
+                                                    <li><a href="{{ route('bagDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+{{--                                            <li><a href="#"><i class="fa fa-star"></i></a></li>--}}
+{{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
+                                                </ul>
+                                            </div>
+                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                                        </div>
+                                        <div class="down-content">
+                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
+                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
+                                            <span>$ {{ $item->price }}</span>
+                                        </div>
+                                    </div>
                             @endforeach
                         </div>
                     </div>
