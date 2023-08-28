@@ -56,7 +56,7 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                        <div class="total">--}}
-                            <h4>Price : {{ $crankShaft->price }} Toman</h4>
+                            <h4>Price : {{ $crankShaft->price }} Tooman</h4>
 {{--                            <div class="main-border-button"><a href="#">Add To Cart</a></div>--}}
 {{--                        </div>--}}
                     </div>

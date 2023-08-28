@@ -44,7 +44,7 @@
                             </div>
                             <div class="down-content">
                                 <a href="{{ route('crankShaftDetail', ['id' => $item->id]) }}">{{ $item->brand ." ". $item->name }}</a>
-                                <span>{{ $item->price }} Toman</span>
+                                <span>{{ $item->price }} Tooman</span>
                             </div>
                         </div>
                     </div>

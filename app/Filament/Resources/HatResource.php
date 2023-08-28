@@ -25,12 +25,12 @@ class HatResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/Hats'),
                 Forms\Components\Select::make('material')->required()->options(['Plastic', 'Cotton'])->label('Material'),
                 Forms\Components\Select::make('color')->required()->label('Color')
-                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
+                    ->options(['-' ,'White', 'Black', 'Purple', 'Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green'])
                     ->searchable(),
-                Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Tooman)')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
@@ -40,6 +40,7 @@ class HatResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\TextColumn::make('material')->label('Material'),

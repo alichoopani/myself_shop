@@ -9017,13 +9017,13 @@ $.widget( "ui.droppable", {
 			}
 		};
 
-		this._addToManager( o.scope );
+		this._addToomanager( o.scope );
 
 		o.addClasses && this.element.addClass( "ui-droppable" );
 
 	},
 
-	_addToManager: function( scope ) {
+	_addToomanager: function( scope ) {
 		// Add the reference and positions to the manager
 		$.ui.ddmanager.droppables[ scope ] = $.ui.ddmanager.droppables[ scope ] || [];
 		$.ui.ddmanager.droppables[ scope ].push( this );
@@ -9056,7 +9056,7 @@ $.widget( "ui.droppable", {
 			var drop = $.ui.ddmanager.droppables[ this.options.scope ];
 
 			this._splice( drop );
-			this._addToManager( value );
+			this._addToomanager( value );
 		}
 
 		this._super( key, value );

@@ -46,7 +46,7 @@
                             <div class="down-content">
                                 <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
                                 <span>{{ $item->name }}</span>
-                                <span>{{ $item->price }} Toman</span>
+                                <span>{{ $item->price }} Tooman</span>
                             </div>
                         </div>
                     </div>

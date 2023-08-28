@@ -28,7 +28,7 @@ class CarAccessoryResource extends Resource
                 Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/carAccessories'),
                 Forms\Components\Textarea::make('description')->nullable()->label('Description'),
                 Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
-                Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Tooman)')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);

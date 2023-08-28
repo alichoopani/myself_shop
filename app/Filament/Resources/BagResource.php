@@ -36,7 +36,7 @@ class BagResource extends Resource
                 Forms\Components\TextInput::make('width')->required()->label('Width(cm)')->numeric(),
                 Forms\Components\TextInput::make('length')->required()->label('Length(cm)')->numeric(),
                 Forms\Components\TextInput::make('weight')->required()->label('Weight(gr)')->numeric(),
-                Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Tooman)')->numeric(),
                 Forms\Components\Select::make('color')->required()->label('Color')
                     ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White', 'Brown'])
                     ->searchable(),

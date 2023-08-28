@@ -32,7 +32,7 @@ class CrankShaftResource extends Resource
                     ->required()->label('Forged'),
                 Forms\Components\TextInput::make('weight')->label('Weight(Kg)')->numeric()->required(),
                 Forms\Components\TextInput::make('number_of_cylinder')->label('Number Of Cylinder')->numeric()->required(),
-                Forms\Components\TextInput::make('price')->required()->label('Price(Toman)')->numeric(),
+                Forms\Components\TextInput::make('price')->required()->label('Price(Tooman)')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
