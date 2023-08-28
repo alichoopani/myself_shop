@@ -41,11 +41,12 @@
 {{--                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                     </ul>
                                 </div>
-                                <img src="{{ asset('assets/images/men-01.jpg') }}" alt="">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="">
                             </div>
                             <div class="down-content">
-                                <a href="{{ route('hatDetail', ['id' => $item->id]) }}">Classic Spring</a>
-                                <span>$120.00</span>
+                                <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
+                                <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
+                                <span>$ {{ $item->price }}</span>
                             </div>
                         </div>
                     </div>

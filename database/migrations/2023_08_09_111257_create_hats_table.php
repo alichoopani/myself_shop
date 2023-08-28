@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->string('name');
             $table->string('image');
+            $table->text('description')->nullable();
             $table->enum('material', ['Plastic', 'Cotton']);
             $table->enum('color', ['White', 'Black', 'Purple', 'Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green'])->nullable();
             $table->unsignedBigInteger('price');

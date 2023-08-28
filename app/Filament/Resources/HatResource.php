@@ -25,6 +25,7 @@ class HatResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
+                Forms\Components\Textarea::make('description')->label('Description'),
                 Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/Hats'),
                 Forms\Components\Select::make('material')->required()->options(['Plastic', 'Cotton'])->label('Material'),
                 Forms\Components\Select::make('color')->required()->label('Color')

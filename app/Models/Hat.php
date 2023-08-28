@@ -14,6 +14,7 @@ class Hat extends Model
         'id',
         'brand',
         'name',
+        'description',
         'image',
         'material',
         'color',
