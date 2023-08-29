@@ -59,9 +59,6 @@ Route::get('/valve/{id}','App\Http\Controllers\ValveController@valveDetail')->na
 Route::get('/pistons','App\Http\Controllers\PistonController@index')->name('pistons');
 Route::get('/piston/{id}','App\Http\Controllers\PistonController@pistonDetail')->name('pistonDetail');
 
-Route::get('/retainers','App\Http\Controllers\RetainerController@index')->name('retainers');
-Route::get('/retainer/{id}','App\Http\Controllers\RetainerController@retainerDetail')->name('retainerDetail');
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');

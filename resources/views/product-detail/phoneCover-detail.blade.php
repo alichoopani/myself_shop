@@ -29,8 +29,9 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="right-content">
-                        <h4>{{ $phoneAccessory->brand . " " . $phoneAccessory->name . " " . $phoneAccessory->phone_model }}</h4>
-                        <span class="price">$75.00</span>
+                        <h4>{{ $phoneAccessory->brand . " " . $phoneAccessory->name }}</h4>
+                        <span>Phone Model :{{ $phoneAccessory->phone_model }}</span>
+                        <span class="price">${{ $phoneAccessory->price }}</span>
 {{--                        <ul class="stars">--}}
 {{--                            <li><i class="fa fa-star"></i></li>--}}
 {{--                            <li><i class="fa fa-star"></i></li>--}}
@@ -38,7 +39,7 @@
 {{--                            <li><i class="fa fa-star"></i></li>--}}
 {{--                            <li><i class="fa fa-star"></i></li>--}}
 {{--                        </ul>--}}
-                        <span>{{ $phoneAccessory->material }}</span>
+                        <span>Material: {{ $phoneAccessory->material }}</span>
 {{--                        <div class="quantity-content">--}}
 {{--                            <div class="left-content">--}}
 {{--                                <h6>No. of Orders</h6>--}}

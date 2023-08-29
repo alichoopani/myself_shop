@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('pistons', function (Blueprint $table) {
             $table->id();
             $table->string('brand');
-            $table->string('name');
+            $table->string('engine_name');
             $table->string('image');
-            $table->string('car_model');
+            $table->string('weight');
+            $table->string('compression');
+            $table->string('bore');
+            $table->text('description');
+            $table->enum('casting_method', ['Casted', 'Forged']);
             $table->unsignedBigInteger('price');
             $table->boolean('warranty')->default(0);
             $table->boolean('approved')->default(1);

@@ -149,7 +149,6 @@
                                     <li><a href="{{ route('crankShafts') }}">Crank Shaft</a></li>
                                     <li><a href="{{ route('ecus') }}">ECU</a></li>
                                     <li><a href="{{ route('pistons') }}">Pistons</a></li>
-                                    <li><a href="{{ route('retainers') }}">Retainers</a></li>
                                     <li><a href="{{ route('wheels') }}">Wheels</a></li>
                                     <li><a href="{{ route('tyres') }}">Tyres</a></li>
                                     <li><a href="{{ route('carAccessory') }}">Car Accessories</a></li>

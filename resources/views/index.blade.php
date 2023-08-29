@@ -121,11 +121,11 @@
                                                 <h4>Tyres</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('retainers') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/retainer.png') }}">
+{{--                                        <img src="{{ asset('/banners/') }}">--}}
                                     </div>
                                 </div>
                             </div>
