@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('brand');
             $table->string('name');
             $table->string('image');
+            $table->text('description')->nullable();
+            $table->enum('material', ['steel', 'iron']);
             $table->string('car_model');
             $table->unsignedBigInteger('price');
             $table->boolean('warranty')->default(0);

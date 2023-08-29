@@ -15,6 +15,8 @@ class Headers extends Model
         'name',
         'image',
         'car_model',
+        'material',
+        'description',
         'price',
         'warranty',
         'approved',
