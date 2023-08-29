@@ -25,9 +25,25 @@ class PhoneCoverResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
-                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/PhoneCovers'),
+                Forms\Components\TextInput::make('phone_model')->required()->label('Phone Model'),
                 Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
+                Forms\Components\Select::make('color')->label('Color')->required()->options([
+                    'White' => 'White',
+                    'Black' => 'Black',
+                    'Purple' => 'Purple',
+                    'Red' => 'Red',
+                    'Blue' => 'Blue',
+                    'Yellow' => 'Yellow',
+                    'Pink' => 'Pink',
+                    'Gray' => 'Gray',
+                    'Green' => 'Green'
+                ]),
+                Forms\Components\Select::make('material')->label('material')->required()->options([
+                    'Leather' => 'Leather',
+                    'Silicon' => 'Silicon',
+                    'Plastic' => 'Plastic'
+                ]),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
@@ -37,9 +53,10 @@ class PhoneCoverResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
-                Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
+                Tables\Columns\TextColumn::make('color')->label('Color'),
+                Tables\Columns\TextColumn::make('phone_model')->label('Phone Model'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty')->alignCenter(),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()

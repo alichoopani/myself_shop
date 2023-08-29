@@ -16,6 +16,7 @@ class PhoneCover extends Model
         'name',
         'image',
         'phone_model',
+        'material',
         'color',
         'price',
         'approved',

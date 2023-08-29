@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('phone_model');
             $table->enum('color', ['White', 'Black', 'Purple', 'Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green'])->nullable();
+            $table->enum('material', ['Leather', 'Plastic', 'Silicon'])->nullable();
             $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);
             $table->timestamps();

@@ -25,7 +25,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $accessories = PhoneCover::query()->with('car_accessories')
+        $accessories = PhoneCover::query()
             ->where('approved', 1)
             ->orderBy('created_at', 'desc')
             ->inRandomOrder()

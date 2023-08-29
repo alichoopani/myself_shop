@@ -362,16 +362,16 @@
                                     <div class="thumb">
                                         <div class="hover-content">
                                             <ul>
-                                                <li><a href="{{ route('carAccessoryDetail : phoneAccessory', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="{{ route('phoneAccessory', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
                                                 {{--                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>--}}
                                                 {{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                             </ul>
                                         </div>
-                                        <img src="{{ asset('assets/images/kid-01.jpg') }}" alt="">
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="cover">
                                     </div>
                                     <div class="down-content">
-                                        <a href="#">School Collection</a>
-                                        <span>$80.00</span>
+                                        <a href="{{ route('phoneAccessory', ['id' => $item->id]) }}">{{ $item->phone_model }}</a>
+                                        <span>${{ $item->price }}</span>
                                     </div>
                                 </div>
                             @endforeach
