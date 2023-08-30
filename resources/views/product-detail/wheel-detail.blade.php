@@ -1,4 +1,4 @@
-@section('title', 'wheel')
+@section('title', 'Wheel | ' . $wheel->brand)
 
 <x-app-layout>
 
@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Single Product Page</h2>
-                        <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                        <h2>{{ $wheel->brand }}</h2>
+                        <span>{{ $wheel->name }}</span>
                     </div>
                 </div>
             </div>
@@ -17,28 +17,27 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-
     <!-- ***** Product Area Starts ***** -->
     <section class="section" id="product">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="left-images">
-                        <img src="assets/images/single-product-01.jpg" alt="">
-                        <img src="assets/images/single-product-02.jpg" alt="">
+                        <img src="{{ asset('storage/' . $wheel->image) }}" alt="wheel">
+{{--                        <img src="assets/images/single-product-02.jpg" alt="">--}}
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="right-content">
                         <h4>New Green Jacket</h4>
                         <span class="price">$75.00</span>
-                        <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
+{{--                        <ul class="stars">--}}
+{{--                            <li><i class="fa fa-star"></i></li>--}}
+{{--                            <li><i class="fa fa-star"></i></li>--}}
+{{--                            <li><i class="fa fa-star"></i></li>--}}
+{{--                            <li><i class="fa fa-star"></i></li>--}}
+{{--                            <li><i class="fa fa-star"></i></li>--}}
+{{--                        </ul>--}}
                         <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>

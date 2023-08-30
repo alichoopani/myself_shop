@@ -17,14 +17,13 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-
     <!-- ***** Products Area Starts ***** -->
     <section class="section" id="products">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Latest Products</h2>
+                        <h2>Our Latest Wheel</h2>
                     </div>
                 </div>
             </div>
@@ -42,11 +41,12 @@
 {{--                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}} {{--for save--}}
                                     </ul>
                                 </div>
-                                <img src="{{ asset('assets/images/men-01.jpg') }}" alt="">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="wheels">
                             </div>
                             <div class="down-content">
-                                <a href="{{ route('wheelDetail',['id' => $item->id]) }}">Classic Spring</a>
-                                <span>$120.00</span>
+                                <a href="{{ route('wheelDetail',['id' => $item->id]) }}">{{ $item->brand }}</a><br/>
+                                <a href="{{ route('wheelDetail',['id' => $item->id]) }}">{{ $item->name }}</a>
+                                <span>$ {{ $item->price }}</span>
                                 {{--                            <ul class="stars">--}}
                                 {{--                                <li><i class="fa fa-star"></i></li>--}}
                                 {{--                                <li><i class="fa fa-star"></i></li>--}}

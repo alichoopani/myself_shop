@@ -11,17 +11,18 @@ class Wheel extends Model
     use HasFactory;
 
     protected $fillable = [
-      'id',
-      'brand',
-      'name',
-      'image',
-      'size',
-      'weight',
-      'width',
-      'lug_nut_form',
-      'price',
-      'approved',
-      'created_at',
-      'updated_at'
+        'id',
+        'brand',
+        'name',
+        'image',
+        'size',
+        'weight',
+        'width',
+        'lug_nut_form',
+        'color',
+        'price',
+        'approved',
+        'created_at',
+        'updated_at'
     ];
 }

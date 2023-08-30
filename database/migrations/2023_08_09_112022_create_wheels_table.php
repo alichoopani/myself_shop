@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('weight');
             $table->unsignedBigInteger('width');
             $table->unsignedBigInteger('lug_nut_form');
+            $table->enum('color', ['black', 'gray', 'silver', 'white', 'bronze', 'chrome', 'etc']);
             $table->unsignedBigInteger('price');
             $table->boolean('approved')->default(1);
             $table->timestamps();
