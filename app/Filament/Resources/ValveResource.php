@@ -25,8 +25,15 @@ class ValveResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
-                Forms\Components\TextInput::make('car_model')->required()->label('Car Model'),
+                Forms\Components\TextInput::make('weight')->required()->label('Weight')->numeric(),
+                Forms\Components\TextInput::make('quantity')->required()->label('Quantity')->numeric(),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/Valves'),
+                Forms\Components\Select::make('material')->label('Material')->options([
+                    'steel' => 'Steel',
+                    'titanium' => 'Titanium',
+                    'alloy' => 'Alloy'
+                ])->searchable(),
+                Forms\Components\TextInput::make('engine_model')->required()->label('Engine Model'),
                 Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
@@ -37,9 +44,10 @@ class ValveResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
                 Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('car_model')->label('Car Model'),
+                Tables\Columns\TextColumn::make('engine_model')->label('Engine Model'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\CheckboxColumn::make('warranty')->label('Warranty')->alignCenter(),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
