@@ -25,10 +25,26 @@ class TShirtResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('brand')->required()->label('Brand'),
                 Forms\Components\TextInput::make('name')->required()->label('Name'),
-                Forms\Components\FileUpload::make('image')->required()->label('Image'),
-                Forms\Components\Select::make('size')->options(['S', 'L', 'XL', 'XXL', '3XL'])->required()->label('Siza'),
+                Forms\Components\FileUpload::make('image')->required()->label('Image')->directory('/T-Shirts'),
+                Forms\Components\Select::make('size')->options([
+                    'S' => 'S',
+                    'L' => 'L',
+                    'XL' => 'XL',
+                    'XXL' => 'XXL',
+                    '3XL' => '3XL'
+                ])->required()->label('Size')->searchable(),
                 Forms\Components\Select::make('color')->required()->label('Color')
-                    ->options(['Red', 'Blue', 'Yellow', 'Pink', 'Gray', 'Green', 'Purple', 'Black', 'White'])
+                    ->options([
+                        'Red' => 'Red',
+                        'Blue' => 'Blue',
+                        'Yellow' => 'Yellow',
+                        'Pink' => 'Pink',
+                        'Gray' => 'Gray',
+                        'Green' => 'Green',
+                        'Purple' => 'Purple',
+                        'Black' => 'Black',
+                        'White' => 'White'
+                    ])
                     ->searchable(),
                 Forms\Components\TextInput::make('price')->required()->label('Price')->numeric(),
                 Forms\Components\Checkbox::make('warranty')->label('Warranty')->default(0),
@@ -40,8 +56,8 @@ class TShirtResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
-                Tables\Columns\TextColumn::make('name')->label('Name'),
                 Tables\Columns\TextColumn::make('size')->label('Size'),
                 Tables\Columns\TextColumn::make('color')->label('Color'),
                 Tables\Columns\TextColumn::make('price')->label('Price'),
