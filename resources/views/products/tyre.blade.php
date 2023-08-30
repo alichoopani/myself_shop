@@ -1,4 +1,4 @@
-@section('title', 'Tyre')
+@section('title', 'Tire')
 
 <x-app-layout>
 
@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Check Our Products</h2>
+                        <h2>Check Our Tire</h2>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Latest Products</h2>
-                        <span>Check out all of our products.</span>
+                        <h2>Our Latest Tire</h2>
+{{--                        <span>Check out all of our products.</span>--}}
                     </div>
                 </div>
             </div>
@@ -42,11 +42,12 @@
 {{--                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                     </ul>
                                 </div>
-                                <img src="{{ asset('assets/images/men-01.jpg') }}" alt="">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="">
                             </div>
                             <div class="down-content">
-                                <a href="{{ route('tyreDetail', ['id' => $item->id]) }}">Classic Spring</a>
-                                <span>$120.00</span>
+                                <a href="{{ route('tyreDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a><br/>
+                                <a href="{{ route('tyreDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
+                                <span>${{ $item->price }}</span>
                             </div>
                         </div>
                     </div>

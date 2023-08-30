@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('brand');
             $table->string('name');
             $table->string('image');
-            $table->string('speed_rating');
-            $table->string('structure');
+//            $table->string('speed_rating');
+            $table->enum('structure', ['Radial', 'Non_Radial']);
             $table->string('load_index');
             $table->date('create_week');
             $table->unsignedBigInteger('size');
@@ -25,6 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('width');
             $table->unsignedBigInteger('grip');
             $table->string('top_speed_rating');
+            $table->string('price');
             $table->boolean('approved')->default(1);
             $table->timestamps();
         });

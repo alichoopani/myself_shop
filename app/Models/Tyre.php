@@ -15,7 +15,6 @@ class Tyre extends Model
         'brand',
         'name',
         'image',
-        'speed_rating',
         'structure',
         'load_index',
         'create_week',

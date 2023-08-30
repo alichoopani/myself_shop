@@ -24,10 +24,13 @@ class TyreResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('brand')->label('Brand')->required(),
-                Forms\Components\TextInput::make('name')->label('Name')->required(),
-                Forms\Components\FileUpload::make('image')->label('Image')->required(),
-                Forms\Components\TextInput::make('speed_rating')->label('Speed Rating')->required(),
-                Forms\Components\TextInput::make('structure')->label('Structure')->required()->default('Radial'),
+                Forms\Components\TextInput::make('name')->label('Model')->required(),
+                Forms\Components\FileUpload::make('image')->label('Image')->required()->directory('/Tyres'),
+//                Forms\Components\TextInput::make('speed_rating')->label('Speed Rating')->required(),
+                Forms\Components\Select::make('structure')->label('Structure')->required()->options([
+                    'Radial' => 'Radial',
+                    'Non_Radial' => 'Non Radial'
+                ])->searchable(),
                 Forms\Components\TextInput::make('load_index')->label('Load Index')->required(),
                 Forms\Components\DatePicker::make('create_week')->required()->label('Create Week'),
                 Forms\Components\TextInput::make('size')->required()->label('Size')->numeric()->default(15),
@@ -35,6 +38,7 @@ class TyreResource extends Resource
                 Forms\Components\TextInput::make('width')->label('Width')->required()->default(255)->numeric(),
                 Forms\Components\TextInput::make('grip')->label('Grip')->required()->default(400)->numeric(),
                 Forms\Components\TextInput::make('top_speed_rating')->label('Top Speed Rating')->required()->default('H'),
+                Forms\Components\TextInput::make('price')->numeric()->required()->label('Price'),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
     }
@@ -43,12 +47,14 @@ class TyreResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('brand')->label('Brand'),
-                Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('speed_rating')->label('Speed Rating'),
+//                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('size')->label('Size'),
                 Tables\Columns\TextColumn::make('width')->label('Width'),
                 Tables\Columns\TextColumn::make('grip')->label('Grip'),
+                Tables\Columns\TextColumn::make('price')->label('Price'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')
             ])
             ->filters([
