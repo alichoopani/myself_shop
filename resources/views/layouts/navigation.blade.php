@@ -114,12 +114,18 @@
                         </a>
                         <!-- ***** Logo End ***** -->
 
+                        @auth()
+                                <ul class="nav">
+                                    <li class="scroll-to-section"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                </ul>
+                        @else
                         <!-- ***** login Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{ route('login') }}">login</a></li>
-                            <li class="scroll-to-section"><a href="{{ route('register') }}">Register</a></li>
-                        </ul>
-                        <!-- ***** login Ends ***** -->
+                            <ul class="nav">
+                                <li class="scroll-to-section"><a href="{{ route('login') }}">login</a></li>
+                                <li class="scroll-to-section"><a href="{{ route('register') }}">Register</a></li>
+                            </ul>
+                            <!-- ***** login Ends ***** -->
+                        @endauth
 
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
