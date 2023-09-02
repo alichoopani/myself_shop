@@ -61,7 +61,7 @@ Route::get('/piston/{id}','App\Http\Controllers\PistonController@pistonDetail')-
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('auth.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
