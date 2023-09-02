@@ -1,3 +1,3 @@
 <div>
-    {{-- The best athlete wants his opponent at his best. --}}
+    <input wire:model="query" class="rounded-lg" placeholder="explore"/>
 </div>

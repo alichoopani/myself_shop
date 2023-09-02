@@ -160,7 +160,7 @@
                                     <li><a href="{{ route('carAccessory') }}">Car Accessories</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
+                            @livewire('search')
                         </ul>
 
                         <a class='menu-trigger'>
