@@ -13,18 +13,25 @@ class Search extends Component
     public function render()
     {
         $products = Bag::query()
-            ->join('hats', 'brand', '=', 'hats.brand')
-            ->join('cam_shafts', 'brand', '=', 'cam_shafts.brand')
-            ->join('car_accessories', 'brand', '=', 'car_accessories.brand')
-            ->join('crank_shafts', 'brand', '=', 'crank_shafts.brand')
-            ->join('ecus', 'brand', '=', 'ecus.brand')
-            ->join('headers', 'brand', '=', 'headers.brand')
-            ->join('phone_covers', 'brand', '=', 'phone_covers.brand')
-            ->join('pistons', 'brand', '=', 'pistons.brand')
-            ->join('tyres', 'brand', '=', 'tyres.brand')
-            ->join('t_shirts', 'brand', '=', 't_shirts.brand')
-            ->join('valves', 'brand', '=', 'valves.brand')
-            ->join('wheels', 'brand', '=', 'wheels.brand');
+            ->join('hats', '*', '=', 'hats.*')
+            ->join('cam_shafts', '*', '=', 'cam_shafts.*')
+            ->join('car_accessories', '*', '=', 'car_accessories.*')
+            ->join('crank_shafts', '*', '=', 'crank_shafts.*')
+            ->join('ecus', '*', '=', 'ecus.*')
+            ->join('headers', '*', '=', 'headers.*')
+            ->join('phone_covers', '*', '=', 'phone_covers.*')
+            ->join('pistons', '*', '=', 'pistons.*')
+            ->join('tyres', '*', '=', 'tyres.*')
+            ->join('t_shirts', '*', '=', 't_shirts.*')
+            ->join('valves', '*', '=', 'valves.*')
+            ->join('wheels', '*', '=', 'wheels.*')
+            ->select([
+                'brand',
+                'name',
+                '',
+                '',
+                ''
+            ]);
 
         return view('livewire.search', ['products' => $products]);
     }
