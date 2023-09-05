@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feature_category', function (Blueprint $table) {
+        Schema::create('feature_categories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('feature_id')->nullable();
