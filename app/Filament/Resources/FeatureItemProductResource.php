@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\FeatureItemProductResource\Pages;
 use App\Filament\Resources\FeatureItemProductResource\RelationManagers;
 use App\Models\FeatureItemProduct;
+use App\Models\Product;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -23,7 +24,11 @@ class FeatureItemProductResource extends Resource
     {
         return $form
             ->schema([
-                //
+//                Forms\Components\Select::make('product_id')->label('Product')->required()->relationship('product', 'title')
+//                    ->getSearchResultsUsing(fn(string $search) => Product::query()
+//                        ->where('title', 'like', "%{$search}%")
+//                        ->limit(6)
+//                        ->pluck('title', 'id')),
             ]);
     }
 
@@ -43,14 +48,14 @@ class FeatureItemProductResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +63,5 @@ class FeatureItemProductResource extends Resource
             'create' => Pages\CreateFeatureItemProduct::route('/create'),
             'edit' => Pages\EditFeatureItemProduct::route('/{record}/edit'),
         ];
-    }    
+    }
 }
