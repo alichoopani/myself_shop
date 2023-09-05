@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CityResource\Pages;
 use App\Filament\Resources\CityResource\RelationManagers;
 use App\Models\City;
+use App\Models\Province;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -23,7 +24,13 @@ class CityResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Select::make('province_id')->label('Province')->required()->relationship('province', 'name')
+                    ->getSearchResultsUsing(fn(string $search) => Province::query()
+                        ->where('name', 'like', "%{$search}%")
+                        ->limit(10)
+                        ->pluck('name', 'id'))
+                    ->searchable(),
+                Forms\Components\TextInput::make('name')->label('Name')->required(),
             ]);
     }
 
@@ -31,7 +38,9 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('province.name')->label('Province'),
+                Tables\Columns\TextColumn::make('name')->label('City Name')
             ])
             ->filters([
                 //
@@ -43,14 +52,14 @@ class CityResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +67,5 @@ class CityResource extends Resource
             'create' => Pages\CreateCity::route('/create'),
             'edit' => Pages\EditCity::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -23,7 +23,13 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\TextInput::make('slug')->label('Slug')->nullable(),
+                Forms\Components\TextInput::make('description')->label('Description')->nullable(),
+                Forms\Components\FileUpload::make('image')->label('Image')->nullable(),
+                Forms\Components\TextInput::make('icon_type')->label('icon Type')->default(0),
+                Forms\Components\FileUpload::make('icon')->label('Icon')->nullable(),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }
 
@@ -31,7 +37,11 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('title')->label('Title'),
+                Tables\Columns\ImageColumn::make('image')->label('Image'),
+                Tables\Columns\ImageColumn::make('icon')->label('Icon'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter(),
             ])
             ->filters([
                 //
@@ -43,14 +53,14 @@ class CategoryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +68,5 @@ class CategoryResource extends Resource
             'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
-    }    
+    }
 }

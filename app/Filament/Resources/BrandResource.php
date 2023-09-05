@@ -23,7 +23,11 @@ class BrandResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\TextInput::make('slug')->label('Slug')->nullable(),
+                Forms\Components\TextInput::make('description')->label('Description')->nullable(),
+                Forms\Components\FileUpload::make('logo')->label('Logo')->nullable(),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }
 
@@ -31,7 +35,10 @@ class BrandResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('title')->label('Title'),
+                Tables\Columns\ImageColumn::make('logo')->label('Logo'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter(),
             ])
             ->filters([
                 //
@@ -43,14 +50,14 @@ class BrandResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +65,5 @@ class BrandResource extends Resource
             'create' => Pages\CreateBrand::route('/create'),
             'edit' => Pages\EditBrand::route('/{record}/edit'),
         ];
-    }    
+    }
 }
