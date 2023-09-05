@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->morphs('likeable');
             $table->unsignedBigInteger('user_id');
+            $table->morphs('likeable');
             $table->timestamps();
         });
     }
