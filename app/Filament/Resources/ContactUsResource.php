@@ -31,7 +31,10 @@ class ContactUsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('email')->label('Email'),
+                Tables\Columns\TextColumn::make('content')->label('Content')
             ])
             ->filters([
                 //
@@ -43,14 +46,14 @@ class ContactUsResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +61,5 @@ class ContactUsResource extends Resource
             'create' => Pages\CreateContactUs::route('/create'),
             'edit' => Pages\EditContactUs::route('/{record}/edit'),
         ];
-    }    
+    }
 }

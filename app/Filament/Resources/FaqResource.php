@@ -23,7 +23,9 @@ class FaqResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Textarea::make('question')->label('Question')->required(),
+                Forms\Components\Textarea::make('answer')->label('Answer')->required(),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1)
             ]);
     }
 
@@ -31,7 +33,9 @@ class FaqResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('question')->label('Question'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')
             ])
             ->filters([
                 //
@@ -43,14 +47,14 @@ class FaqResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +62,5 @@ class FaqResource extends Resource
             'create' => Pages\CreateFaq::route('/create'),
             'edit' => Pages\EditFaq::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -23,7 +23,8 @@ class ColorResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\TextInput::make('hex_code')->label('Hex Code')->required()
             ]);
     }
 
@@ -31,7 +32,9 @@ class ColorResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('title')->label('Title'),
+                Tables\Columns\TextColumn::make('hex_code')->label('Hex Code')
             ])
             ->filters([
                 //
@@ -43,14 +46,14 @@ class ColorResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +61,5 @@ class ColorResource extends Resource
             'create' => Pages\CreateColor::route('/create'),
             'edit' => Pages\EditColor::route('/{record}/edit'),
         ];
-    }    
+    }
 }
