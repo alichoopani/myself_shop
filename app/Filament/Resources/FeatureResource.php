@@ -23,7 +23,9 @@ class FeatureResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\Textarea::make('description')->label('Description')->nullable(),
+                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }
 
@@ -31,7 +33,9 @@ class FeatureResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextInputColumn::make('id')->label('ID'),
+                Tables\Columns\TextInputColumn::make('title')->label('Title'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //
@@ -43,14 +47,14 @@ class FeatureResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +62,5 @@ class FeatureResource extends Resource
             'create' => Pages\CreateFeature::route('/create'),
             'edit' => Pages\EditFeature::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -4,6 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\FeatureCategoryResource\Pages;
 use App\Filament\Resources\FeatureCategoryResource\RelationManagers;
+use App\Models\Category;
+use App\Models\Feature;
 use App\Models\FeatureCategory;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -23,9 +25,18 @@ class FeatureCategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')->label('Title')->required(),
-                Forms\Components\Textarea::make('description')->label('Description')->nullable(),
-                Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
+                Forms\Components\Select::make('category_id')->label('Category')->relationship('category', 'title')
+                    ->getSearchResultsUsing(fn(string $search) => Category::query()
+                        ->where('title', 'like', "%{$search}%")
+                        ->limit(6)
+                        ->pluck('title', 'id'))
+                    ->required()->searchable(),
+                Forms\Components\Select::make('feature_id')->label('Feature')->relationship('feature', 'title')
+                    ->getSearchResultsUsing(fn(string $search) => Feature::query()
+                        ->where('title', 'like', "%{$search}%")
+                        ->limit(6)
+                        ->pluck('title', 'id'))
+                    ->required()->searchable(),
             ]);
     }
 
@@ -33,9 +44,9 @@ class FeatureCategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextInputColumn::make('id')->label('ID'),
-                Tables\Columns\TextInputColumn::make('title')->label('Title'),
-                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('category.title')->label('Category'),
+                Tables\Columns\TextColumn::make('feature.title')->label('Feature'),
             ])
             ->filters([
                 //
