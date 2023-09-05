@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('icon_type')->default(0);
             $table->string('icon')->nullable();
-            $table->string('approved')->default(1);
+            $table->boolean('approved')->default(1);
             $table->timestamps();
         });
     }

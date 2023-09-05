@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->string('content');
-            $table->morphs('commentable');
+            $table->tinyInteger('rate')->nullable();
             $table->boolean('approved')->default(1);
             $table->timestamps();
         });
