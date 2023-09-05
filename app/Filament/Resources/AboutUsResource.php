@@ -23,7 +23,9 @@ class AboutUsResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Textarea::make('content')->required()->label('Content'),
+                Forms\Components\FileUpload::make('image')->nullable()->label('Image'),
+                Forms\Components\Checkbox::make('approved')->default(1)->label('Approved')
             ]);
     }
 
@@ -31,7 +33,9 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('content')->label('Content'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //
@@ -43,14 +47,14 @@ class AboutUsResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +62,5 @@ class AboutUsResource extends Resource
             'create' => Pages\CreateAboutUs::route('/create'),
             'edit' => Pages\EditAboutUs::route('/{record}/edit'),
         ];
-    }    
+    }
 }
