@@ -37,7 +37,6 @@ return new class extends Migration
                 'canceled-by-customer'
             ]);
             $table->timestamps();
-            $table->timestamps('deleted_at');
         });
     }
 

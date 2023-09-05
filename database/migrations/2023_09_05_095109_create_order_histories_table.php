@@ -32,7 +32,6 @@ return new class extends Migration
             ]);
             $table->boolean('approved')->default(1);
             $table->timestamps();
-            $table->timestamps('deleted_at');
         });
     }
 
