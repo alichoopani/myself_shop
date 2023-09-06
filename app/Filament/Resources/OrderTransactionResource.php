@@ -31,7 +31,15 @@ class OrderTransactionResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('user_id')->label('User ID'),
+                Tables\Columns\TextColumn::make('order_id')->label('Order ID'),
+                Tables\Columns\TextColumn::make('final_price')->label('Final Price'),
+                Tables\Columns\TextColumn::make('bank_name')->label('Bank Name'),
+                Tables\Columns\TextColumn::make('bank_recv')->label('Bank Recv'),
+                Tables\Columns\TextColumn::make('bank_send')->label('Bank Send'),
+                Tables\Columns\TextColumn::make('bank_log')->label('Bank log'),
+                Tables\Columns\TextColumn::make('status')->label('Status')
             ])
             ->filters([
                 //
@@ -43,14 +51,14 @@ class OrderTransactionResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +66,5 @@ class OrderTransactionResource extends Resource
             'create' => Pages\CreateOrderTransaction::route('/create'),
             'edit' => Pages\EditOrderTransaction::route('/{record}/edit'),
         ];
-    }    
+    }
 }

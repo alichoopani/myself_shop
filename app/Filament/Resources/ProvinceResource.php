@@ -23,7 +23,7 @@ class ProvinceResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->required()->label('Name'),
             ]);
     }
 
@@ -31,7 +31,8 @@ class ProvinceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('name')->label('Name'),
             ])
             ->filters([
                 //
@@ -43,14 +44,14 @@ class ProvinceResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +59,5 @@ class ProvinceResource extends Resource
             'create' => Pages\CreateProvince::route('/create'),
             'edit' => Pages\EditProvince::route('/{record}/edit'),
         ];
-    }    
+    }
 }
