@@ -31,7 +31,10 @@ class LikeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('user.name')->label('User'),
+                Tables\Columns\TextColumn::make('likeable_type')->label('Likeable Type'),
+                Tables\Columns\TextColumn::make('likeable_id')->label('Likeable Id')
             ])
             ->filters([
                 //
@@ -44,11 +47,11 @@ class LikeResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageLikes::route('/'),
         ];
-    }    
+    }
 }

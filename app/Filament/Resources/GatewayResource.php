@@ -23,7 +23,10 @@ class GatewayResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')->label('Title')->required(),
+                Forms\Components\TextInput::make('merchant_id')->label('Merchant Id')->nullable(),
+                Forms\Components\Toggle::make('active')->label('Active')->required()->default(1)->onIcon('heroicon-s-lightning-bolt')
+                    ->offIcon('heroicon-s-user'),
             ]);
     }
 
@@ -31,7 +34,9 @@ class GatewayResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('title')->label('Title'),
+                Tables\Columns\ToggleColumn::make('active')->label('Active')
             ])
             ->filters([
                 //
@@ -43,14 +48,14 @@ class GatewayResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +63,5 @@ class GatewayResource extends Resource
             'create' => Pages\CreateGateway::route('/create'),
             'edit' => Pages\EditGateway::route('/{record}/edit'),
         ];
-    }    
+    }
 }

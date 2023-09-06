@@ -31,7 +31,16 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('user.name')->label('User'),
+                Tables\Columns\TextColumn::make('address_id')->label('Address'),
+                Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
+                Tables\Columns\TextColumn::make('items_price')->label('Items Price'),
+                Tables\Columns\TextColumn::make('items_discount')->label('Items Discount'),
+                Tables\Columns\TextColumn::make('delivery_price')->label('Delivery Price'),
+                Tables\Columns\TextColumn::make('tax')->label('Tax'),
+                Tables\Columns\TextColumn::make('final_price')->label('Final Price'),
+                Tables\Columns\TextColumn::make('tracking_code')->label('Tracking Code'),
+                Tables\Columns\TextColumn::make('status')->label('Status')
             ])
             ->filters([
                 //
@@ -43,14 +52,14 @@ class OrderResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +67,5 @@ class OrderResource extends Resource
             'create' => Pages\CreateOrder::route('/create'),
             'edit' => Pages\EditOrder::route('/{record}/edit'),
         ];
-    }    
+    }
 }
