@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\FeatureItemProductResource\Pages;
 use App\Filament\Resources\FeatureItemProductResource\RelationManagers;
+use App\Models\FeatureItem;
 use App\Models\FeatureItemProduct;
 use App\Models\Product;
 use Filament\Forms;
@@ -24,11 +25,17 @@ class FeatureItemProductResource extends Resource
     {
         return $form
             ->schema([
-//                Forms\Components\Select::make('product_id')->label('Product')->required()->relationship('product', 'title')
-//                    ->getSearchResultsUsing(fn(string $search) => Product::query()
-//                        ->where('title', 'like', "%{$search}%")
-//                        ->limit(6)
-//                        ->pluck('title', 'id')),
+                Forms\Components\Select::make('product_id')->label('Product')->required()->relationship('product', 'title') //relation bayad bezanam ehtemalan
+                ->getSearchResultsUsing(fn(string $search) => Product::query()
+                    ->where('title', 'like', "%{$search}%")
+                    ->limit(6)
+                    ->pluck('title', 'id'))->searchable(),
+                Forms\Components\Select::make('feature_item_id')->label('Feature Item')->required()->relationship('feature_item', 'title')
+                    ->getSearchResultsUsing(fn(string $search) => FeatureItem::query()
+                        ->where('title', 'like', "%{$search}%")
+                        ->limit(5)
+                        ->pluck('title', 'id'))
+                    ->searchable(),
             ]);
     }
 
@@ -36,7 +43,9 @@ class FeatureItemProductResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('product.title')->label('Product'),
+                Tables\Columns\TextColumn::make('feature_item.title')->label('Feature Item'),
             ])
             ->filters([
                 //
