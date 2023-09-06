@@ -31,7 +31,12 @@ class OrderHistoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('user_id')->label('User Id'),
+                Tables\Columns\TextColumn::make('order_id')->label('Order Id'),
+                Tables\Columns\TextColumn::make('note')->label('Note'),
+                Tables\Columns\TextColumn::make('status')->label('Status'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')
             ])
             ->filters([
                 //
@@ -43,14 +48,14 @@ class OrderHistoryResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +63,5 @@ class OrderHistoryResource extends Resource
             'create' => Pages\CreateOrderHistory::route('/create'),
             'edit' => Pages\EditOrderHistory::route('/{record}/edit'),
         ];
-    }    
+    }
 }

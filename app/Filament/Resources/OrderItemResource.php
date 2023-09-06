@@ -31,7 +31,18 @@ class OrderItemResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                Tables\Columns\TextColumn::make('user_id')->label('User Id'),
+                Tables\Columns\TextColumn::make('order_id')->label('Order Id'),
+                Tables\Columns\TextColumn::make('color.title')->label('Color'),
+                Tables\Columns\TextColumn::make('product.title')->label('Product'),
+                Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
+                Tables\Columns\TextColumn::make('price')->label('Price'),
+                Tables\Columns\TextColumn::make('discounted_price')->label('Discounted Price'),
+                Tables\Columns\TextColumn::make('final_price')->label('Final Price'),
+                Tables\Columns\TextColumn::make('costumer_note')->label('Costumer Note'),
+                Tables\Columns\TextColumn::make('extras')->label('Extras'),
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')
             ])
             ->filters([
                 //
@@ -43,14 +54,14 @@ class OrderItemResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +69,5 @@ class OrderItemResource extends Resource
             'create' => Pages\CreateOrderItem::route('/create'),
             'edit' => Pages\EditOrderItem::route('/{record}/edit'),
         ];
-    }    
+    }
 }
