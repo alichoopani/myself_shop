@@ -26,7 +26,7 @@ class BrandResource extends Resource
                 Forms\Components\TextInput::make('title')->label('Title')->required(),
                 Forms\Components\TextInput::make('slug')->label('Slug')->nullable(),
                 Forms\Components\TextInput::make('description')->label('Description')->nullable(),
-                Forms\Components\FileUpload::make('logo')->label('Logo')->nullable(),
+                Forms\Components\FileUpload::make('logo')->label('Logo')->nullable()->directory('/brand'),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }

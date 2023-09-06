@@ -26,9 +26,9 @@ class CategoryResource extends Resource
                 Forms\Components\TextInput::make('title')->label('Title')->required(),
                 Forms\Components\TextInput::make('slug')->label('Slug')->nullable(),
                 Forms\Components\TextInput::make('description')->label('Description')->nullable(),
-                Forms\Components\FileUpload::make('image')->label('Image')->nullable(),
+                Forms\Components\FileUpload::make('image')->label('Image')->nullable()->directory('/category-image'),
                 Forms\Components\TextInput::make('icon_type')->label('icon Type')->default(0),
-                Forms\Components\FileUpload::make('icon')->label('Icon')->nullable(),
+                Forms\Components\FileUpload::make('icon')->label('Icon')->nullable()->directory('/category-icon'),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }
