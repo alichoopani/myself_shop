@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FeatureItemProduct extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        '',
+        'created_at',
+        'updated_at'
+    ];
 }

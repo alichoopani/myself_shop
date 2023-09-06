@@ -12,4 +12,11 @@ class Product extends Model
     protected $casts = [
         'images' => 'array'
     ];
+
+    protected $fillable = [
+        'id',
+        '',
+        'created_at',
+        'updated_at'
+    ];
 }
