@@ -11,7 +11,9 @@ class AboutUs extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'content',
+        'image',
+        'approved',
         'created_at',
         'updated_at'
     ];
