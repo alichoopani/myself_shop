@@ -11,7 +11,8 @@ class City extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'province_id',
+        'name',
         'created_at',
         'updated_at'
     ];
