@@ -11,8 +11,8 @@ class Color extends Model
 
     protected $fillable = [
         'id',
-        '',
-        '',
+        'title',
+        'hex_code',
         'created_at',
         'updated_at'
     ];
