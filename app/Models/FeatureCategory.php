@@ -11,7 +11,8 @@ class FeatureCategory extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'category_id',
+        'feature_id',
         'created_at',
         'updated_at'
     ];

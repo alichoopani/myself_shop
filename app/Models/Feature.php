@@ -11,7 +11,9 @@ class Feature extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'title',
+        'description',
+        'approved',
         'created_at',
         'updated_at'
     ];

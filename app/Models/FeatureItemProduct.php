@@ -11,7 +11,8 @@ class FeatureItemProduct extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'product_id',
+        'feature_item_id',
         'created_at',
         'updated_at'
     ];
