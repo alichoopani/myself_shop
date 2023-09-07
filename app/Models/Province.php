@@ -11,7 +11,7 @@ class Province extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'name',
         'created_at',
         'updated_at'
     ];
