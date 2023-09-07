@@ -11,7 +11,14 @@ class OrderTransaction extends Model
 
     protected $fillable = [
         'id',
-        '',
+        'user_id',
+        'order_id',
+        'final_price',
+        'bank_name',
+        'bank_recv',
+        'bank_send',
+        'bank_log',
+        'status',
         'created_at',
         'updated_at'
     ];
