@@ -16,4 +16,14 @@ class City extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
 }
