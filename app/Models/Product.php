@@ -12,7 +12,9 @@ class Product extends Model
     use HasFactory;
 
     protected $casts = [
-        'images' => 'array'
+        'images' => 'array',
+        'color_id' => 'array',
+        'end_time'  =>  'datetime'
     ];
 
     protected $fillable = [

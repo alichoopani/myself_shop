@@ -17,4 +17,14 @@ class Feature extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function featureItems()
+    {
+        return $this->hasMany(FeatureItem::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'feature_category', 'feature_id', 'category_id');
+    }
 }
