@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
@@ -24,4 +25,29 @@ class Order extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
+
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function orderHistories()
+    {
+        return $this->hasMany(OrderHistory::class);
+    }
+
+    public function orderTransactions()
+    {
+        return $this->hasMany(OrderTransaction::class);
+    }
 }

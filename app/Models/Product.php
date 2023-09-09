@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Product extends Model
 {
@@ -62,5 +64,25 @@ class Product extends Model
     public function colors()
     {
         return $this->hasMany(Color::class);
+    }
+
+    public function featureItems(): BelongsToMany
+    {
+        return $this->belongsToMany(FeatureItem::class, 'feature_item_product', 'product_id', 'feature_item_id');
+    }
+
+    public function likes(): MorphMany
+    {
+        return $this->morphMany(Like::Class, 'likeable');
+    }
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::Class);
+    }
+
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }
