@@ -17,6 +17,8 @@ class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
 
+    protected static ?string $pluralLabel = 'About Us';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
