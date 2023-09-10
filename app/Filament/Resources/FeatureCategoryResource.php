@@ -20,6 +20,7 @@ class FeatureCategoryResource extends Resource
     protected static ?string $model = FeatureCategory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Feature';
 
     public static function form(Form $form): Form
     {

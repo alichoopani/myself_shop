@@ -18,6 +18,7 @@ class OrderHistoryResource extends Resource
     protected static ?string $model = OrderHistory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Order';
 
     public static function form(Form $form): Form
     {

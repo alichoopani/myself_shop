@@ -18,6 +18,7 @@ class OrderTransactionResource extends Resource
     protected static ?string $model = OrderTransaction::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Order';
 
     public static function form(Form $form): Form
     {

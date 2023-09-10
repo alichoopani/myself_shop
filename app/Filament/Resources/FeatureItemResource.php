@@ -19,6 +19,7 @@ class FeatureItemResource extends Resource
     protected static ?string $model = FeatureItem::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Feature';
 
     public static function form(Form $form): Form
     {
