@@ -18,6 +18,7 @@ class GatewayResource extends Resource
     protected static ?string $model = Gateway::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Gateway';
 
     public static function form(Form $form): Form
     {

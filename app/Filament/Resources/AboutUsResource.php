@@ -20,6 +20,7 @@ class AboutUsResource extends Resource
     protected static ?string $pluralLabel = 'About Us';
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Info & Contacts';
 
     public static function form(Form $form): Form
     {

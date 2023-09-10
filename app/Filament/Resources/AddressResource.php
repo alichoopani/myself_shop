@@ -21,6 +21,7 @@ class AddressResource extends Resource
     protected static ?string $model = Address::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Address';
 
     public static function form(Form $form): Form
     {

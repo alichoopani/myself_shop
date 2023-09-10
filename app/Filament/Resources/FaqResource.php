@@ -18,6 +18,7 @@ class FaqResource extends Resource
     protected static ?string $model = Faq::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Info & Contacts';
 
     public static function form(Form $form): Form
     {
