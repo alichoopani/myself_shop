@@ -21,7 +21,6 @@ Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
 Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
 
 
-
 Route::get('/dashboard', function () {
     return view('auth.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
