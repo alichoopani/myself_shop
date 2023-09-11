@@ -27,10 +27,10 @@ class CategoryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('title')->label('Title')->required(),
                 Forms\Components\TextInput::make('slug')->label('Slug')->nullable(),
-                Forms\Components\TextInput::make('description')->label('Description')->nullable(),
                 Forms\Components\FileUpload::make('image')->label('Image')->nullable()->directory('/category-image'),
-                Forms\Components\TextInput::make('icon_type')->label('icon Type')->default(0),
                 Forms\Components\FileUpload::make('icon')->label('Icon')->nullable()->directory('/category-icon'),
+                Forms\Components\Textarea::make('description')->label('Description')->nullable(),
+                Forms\Components\Checkbox::make('icon_type')->label('Icon Type')->default(0),
                 Forms\Components\Checkbox::make('approved')->label('Approved')->default(1),
             ]);
     }

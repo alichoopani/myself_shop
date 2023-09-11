@@ -20,6 +20,15 @@ class CommentResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     protected static ?string $navigationGroup = 'Like & Comments';
 
+    public static string $resource = CommentResource::class;
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            CommentResource\Widgets\CommentOverview::class,
+        ];
+    }
+
     public static function form(Form $form): Form
     {
         return $form

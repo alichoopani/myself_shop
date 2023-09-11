@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->text('content');
             $table->string('image')->nullable();
             $table->boolean('approved')->default(1);
             $table->timestamps();
