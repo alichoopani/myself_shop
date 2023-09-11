@@ -12,8 +12,6 @@ class Search extends Component
 
     public function render()
     {
-        $products = Bag::query();
-
-        return view('livewire.search', ['products' => $products]);
+        return view('livewire.search', []);
     }
 }

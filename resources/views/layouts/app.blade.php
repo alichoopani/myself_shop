@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
 
-        <meta name="application-name" content="{{ config('app.name') }}" />
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@yield('title')</title>
 
-        <title>{{ config('app.name') }}</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
-        <style>
-            [x-cloak] {
-                display: none !important;
-            }
-        </style>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
-        @livewireScripts
-        @stack('scripts')
-    </head>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-hexashop.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
+    <!-- CSS Files -->
 
-    <body class="antialiased">
-        {{ $slot }}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
-        @livewire('notifications')
-    </body>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+    @livewireScripts
+    @stack('scripts')
+</head>
+
+<body class="antialiased">
+@include('layouts.navigation')
+{{ $slot }}
+@include('layouts.footer')
+
+@livewire('notifications')
+
+
+<!-- jQuery -->
+<script src="{{ asset('assets/js/jquery-2.1.0.min.js') }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset('assets/js/popper.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+<!-- Plugins -->
+<script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+<script src="{{ asset('assets/js/accordions.js') }}"></script>
+<script src="{{ asset('assets/js/datepicker.js') }}"></script>
+<script src="{{ asset('assets/js/scrollreveal.min.js') }}"></script>
+<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('assets/js/imgfix.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.js') }}"></script>
+<script src="{{ asset('assets/js/lightbox.js') }}"></script>
+<script src="{{ asset('assets/js/isotope.js') }}"></script>
+
+<!-- Global Init -->
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<script>
+    $(function () {
+        var selectedClass = "";
+        $("p").click(function () {
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("." + selectedClass).fadeOut();
+            setTimeout(function () {
+                $("." + selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+        });
+    });
+</script>
+
+</body>
 </html>

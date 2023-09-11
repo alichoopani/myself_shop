@@ -13,10 +13,10 @@
                                 <h4>We Are HooniShop</h4>
                                 <span>-----------</span>
                                 <div class="main-border-button">
-                                    <a href="{{ route('wheels') }}">Purchase Now!</a>
+                                    <a href="#">Purchase Now!</a>
                                 </div>
                             </div>
-                            <img src="{{ asset('storage/banners/wheels.jpg') }}" alt="">
+                            <img src="#" alt="">
                         </div>
                     </div>
                 </div>
@@ -35,11 +35,11 @@
                                                 <h4>Tyres</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('tyres') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/Michelin tire and rim_i_0_i.jpg') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -55,11 +55,11 @@
                                                 <h4>Bags</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('bags') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/backpacks-2048px-9904.jpg') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -75,11 +75,11 @@
                                                 <h4>Hats</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('hats') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/hat.jpeg') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -95,11 +95,11 @@
                                                 <h4>T-SHIRTS</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('tShirts') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/t-shirt.jpeg') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -141,11 +141,11 @@
                                                 <h4>Bags</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('valves') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/engine-valves.jpeg') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -161,11 +161,11 @@
                                                 <h4>Hats</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('crankShafts') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/seat-crankshaft.avif') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -181,11 +181,11 @@
                                                 <h4>T-SHIRTS</h4>
                                                 <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
-                                                    <a href="{{ route('camShafts') }}">Discover More</a>
+                                                    <a href="#">Discover More</a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="{{ asset('storage/banners/camshaft-cat-cams-opel-2-0-hydr-298-degree-cih-cast-iron.avif') }}">
+                                        <img src="#">
                                     </div>
                                 </div>
                             </div>
@@ -199,10 +199,10 @@
                                 <h4>We Are HooniShop</h4>
                                 <span>-----------</span>
                                 <div class="main-border-button">
-                                    <a href="{{ route('headers') }}">Purchase Now!</a>
+                                    <a href="#">Purchase Now!</a>
                                 </div>
                             </div>
-                            <img src="{{ asset('storage/banners/headers.webp') }}" alt="">
+                            <img src="#" alt="">
                         </div>
                     </div>
                 </div>
@@ -228,25 +228,25 @@
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            @foreach($latestHats as $item)
+{{--                            @foreach($latestHats as $item)--}}
                                     <div class="item">
                                         <div class="thumb">
                                             <div class="hover-content">
                                                 <ul>
-                                                    <li><a href="{{ route('hatDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+{{--                                                    <li><a href="{{ route('hatDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>--}}
 {{--                                            <li><a href="#"><i class="fa fa-star"></i></a></li>--}}
 {{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                                 </ul>
                                             </div>
-                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+{{--                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">--}}
                                         </div>
                                         <div class="down-content">
-                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
-                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
-                                            <span>$ {{ $item->price }}</span>
+{{--                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>--}}
+{{--                                            <a href="{{ route('hatDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>--}}
+{{--                                            <span>$ {{ $item->price }}</span>--}}
                                         </div>
                                     </div>
-                            @endforeach
+{{--                            @endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -272,25 +272,25 @@
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            @foreach($latestBags as $item)
+{{--                            @foreach($latestBags as $item)--}}
                                     <div class="item">
                                         <div class="thumb">
                                             <div class="hover-content">
                                                 <ul>
-                                                    <li><a href="{{ route('bagDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+{{--                                                    <li><a href="{{ route('bagDetail', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>--}}
 {{--                                            <li><a href="#"><i class="fa fa-star"></i></a></li>--}}
 {{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                                 </ul>
                                             </div>
-                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+{{--                                            <img src="{{ asset('storage/' . $item->image) }}" alt="">--}}
                                         </div>
                                         <div class="down-content">
-                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>
-                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>
-                                            <span>$ {{ $item->price }}</span>
+{{--                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->brand }}</a>--}}
+{{--                                            <a href="{{ route('bagDetail', ['id' => $item->id]) }}">{{ $item->name }}</a>--}}
+{{--                                            <span>$ {{ $item->price }}</span>--}}
                                         </div>
                                     </div>
-                            @endforeach
+{{--                            @endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                 <div class="col-lg-12">
                     <div class="women-item-carousel">
                         <div class="owl-women-item owl-carousel">
-                            @foreach($tShirts as $item)
+{{--                            @foreach($tShirts as $item)--}}
                                 <div class="item">
                                     <div class="thumb">
                                         <div class="hover-content">
@@ -325,14 +325,14 @@
 {{--                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                             </ul>
                                         </div>
-                                        <img src="{{ asset('assets/images/women-01.jpg') }}" alt="">
+{{--                                        <img src="{{ asset('assets/images/women-01.jpg') }}" alt="">--}}
                                     </div>
                                     <div class="down-content">
                                         <h4>New Green Jacket</h4>
                                         <span>$75.00</span>
                                     </div>
                                 </div>
-                            @endforeach
+{{--                            @endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -357,24 +357,24 @@
                 <div class="col-lg-12">
                     <div class="kid-item-carousel">
                         <div class="owl-kid-item owl-carousel">
-                            @foreach($accessories as $item)
+{{--                            @foreach($accessories as $item)--}}
                                 <div class="item">
                                     <div class="thumb">
                                         <div class="hover-content">
                                             <ul>
-                                                <li><a href="{{ route('phoneAccessory', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>
+{{--                                                <li><a href="{{ route('phoneAccessory', ['id' => $item->id]) }}"><i class="fa fa-eye"></i></a></li>--}}
                                                 {{--                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>--}}
                                                 {{--                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>--}}
                                             </ul>
                                         </div>
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="cover">
+{{--                                        <img src="{{ asset('storage/' . $item->image) }}" alt="cover">--}}
                                     </div>
                                     <div class="down-content">
-                                        <a href="{{ route('phoneAccessory', ['id' => $item->id]) }}">{{ $item->phone_model }}</a>
-                                        <span>${{ $item->price }}</span>
+{{--                                        <a href="{{ route('phoneAccessory', ['id' => $item->id]) }}">{{ $item->phone_model }}</a>--}}
+{{--                                        <span>${{ $item->price }}</span>--}}
                                     </div>
                                 </div>
-                            @endforeach
+{{--                            @endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -397,7 +397,7 @@
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
-                            <a href="{{ route('wheels') }}">Discover More</a>
+                            <a href="#">Discover More</a>
                         </div>
                     </div>
                 </div>
