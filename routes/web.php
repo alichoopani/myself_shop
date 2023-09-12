@@ -22,7 +22,7 @@ Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->na
 
 
 Route::get('/dashboard', function () {
-    return view('auth.dashboard');
+    return view('profile.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
