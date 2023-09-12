@@ -110,7 +110,7 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('category.title')->label('Category'),
                 Tables\Columns\TextColumn::make('brand.title')->label('Brand'),
                 Tables\Columns\TextColumn::make('color.title')->label('Color'),
-                Tables\Columns\ImageColumn::make('image')->label(''),
+                Tables\Columns\ImageColumn::make('image')->label('Image'),
                 Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
                 Tables\Columns\TextColumn::make('status')->label('Status'),
                 Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
