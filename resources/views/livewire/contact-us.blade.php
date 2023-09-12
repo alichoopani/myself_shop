@@ -3,11 +3,9 @@
     <form wire:submit.prevent="submit" method="post">
         @csrf
         <div class="row">
-
-
             <div class="col-lg-6">
-                @error('user')<span class="text-red-600">{{$message}}</span> @enderror
-                <input wire:model="user" type="text" placeholder="Your name" required />
+                @error('name')<span class="text-red-600">{{$message}}</span> @enderror
+                <input wire:model="name" type="text" placeholder="Your name" required />
             </div>
             {{-- input name Does not work!! --}}
 

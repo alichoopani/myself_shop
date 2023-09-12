@@ -18,7 +18,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::get('/about-us', 'App\Http\Controllers\PagesController@aboutUs')->name('aboutUs');
 Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
-Route::get( '/contact-us', 'App\Http\Controllers\PagesController@contactUs')->name('contactUs');
+Route::view( '/contact-us', 'pages.contact-us')->name('contactUs');
 
 
 Route::get('/dashboard', function () {

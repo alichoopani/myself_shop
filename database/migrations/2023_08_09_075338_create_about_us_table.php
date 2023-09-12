@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->text('address')->nullable();
             $table->string('image')->nullable();
+            $table->string('email')->nullable();
+            $table->string('social_media')->nullable();
             $table->boolean('approved')->default(1);
             $table->timestamps();
         });
