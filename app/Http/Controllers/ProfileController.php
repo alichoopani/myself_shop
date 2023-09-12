@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Like;
+use App\Models\Product;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +18,20 @@ class ProfileController extends Controller
 
     public function index()
     {
+        $likes = Like::query()
+            ->with([
+                'likeable' => function (MorphTo $morphTo) {
+                    $morphTo->morphWith([
+                        Product::class
+                    ]);
+                }
+            ])
+            ->where('user_id', Auth::id())
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get();
 
-        return view('profile.dashboard', []);
+        return view('profile.dashboard', ['likes' => $likes]);
     }
 
 

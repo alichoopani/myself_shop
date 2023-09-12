@@ -32,19 +32,19 @@ class ProductResource extends Resource
                 Forms\Components\TextInput::make('slug')->label('Slug')->required(),
                 Forms\Components\TextInput::make('description')->label('Description')->nullable(),
                 Forms\Components\Select::make('category_id')->label('Category')->nullable()->searchable()
-//                    ->relationship('categories', 'title')
+                    ->relationship('category', 'title')
                     ->getSearchResultsUsing(fn(string $search) => Category::query()
                         ->where('title', 'like', "%{$search}%")
                         ->limit(10)
                         ->pluck('title', 'id')),
                 Forms\Components\Select::make('brand_id')->label('Brand')->nullable()->searchable()
-//                    ->relationship('brand', 'title')
+                    ->relationship('brand', 'title')
                     ->getSearchResultsUsing(fn(string $search) => Brand::query()
                         ->where('title', 'like', "%{$search}%")
                         ->limit(10)
                         ->pluck('title', 'id')),
                 Forms\Components\Select::make('color_id')->label('Color')->nullable()->searchable()
-//                    ->relationship('color', 'title')
+                    ->relationship('color', 'title')
                     ->getSearchResultsUsing(fn(string $search) => Color::query()
                         ->where('title', 'like', "%{$search}%")
                         ->limit(10)
@@ -110,10 +110,10 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('category.title')->label('Category'),
                 Tables\Columns\TextColumn::make('brand.title')->label('Brand'),
                 Tables\Columns\TextColumn::make('color.title')->label('Color'),
-                Tables\Columns\TextColumn::make('image')->label(''),
+                Tables\Columns\ImageColumn::make('image')->label(''),
                 Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
                 Tables\Columns\TextColumn::make('status')->label('Status'),
-                Tables\Columns\TextColumn::make('approved')->label('Approved')->a
+                Tables\Columns\CheckboxColumn::make('approved')->label('Approved')->alignCenter()
             ])
             ->filters([
                 //

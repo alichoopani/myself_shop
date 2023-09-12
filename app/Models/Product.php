@@ -15,8 +15,8 @@ class Product extends Model
 
     protected $casts = [
         'images' => 'array',
-        'color_id' => 'array',
-        'end_time'  =>  'datetime'
+//        'color_id' => 'array',
+        'end_time' => 'datetime'
     ];
 
     protected $fillable = [
@@ -61,9 +61,9 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function colors()
+    public function color()
     {
-        return $this->hasMany(Color::class);
+        return $this->belongsTo(Color::class);
     }
 
     public function featureItems(): BelongsToMany
