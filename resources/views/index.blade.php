@@ -45,26 +45,28 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4>BAGS</h4>
-                                            <span>--------------</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>Bags</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
-                                                <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                            @foreach($pistons as $item)
+                                    <div class="col-lg-6">
+                                        <div class="right-first-image">
+                                            <div class="thumb">
+                                                <div class="inner-content">
+                                                    <h4>{{ $item->title }}</h4>
+                                                    <span>{{ $item->brand->title }}</span>
                                                 </div>
+                                                <div class="hover-content">
+                                                    <div class="inner">
+                                                        <h4>Piston</h4>
+                                                        <p>{{ $item->description }}</p>
+                                                        <div class="main-border-button">
+                                                            <a href="#">Discover More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <img src="{{ asset('storage/' . $item->image) }}">
                                             </div>
                                         </div>
-                                        <img src="#">
                                     </div>
-                                </div>
-                            </div>
+                                @endforeach
                             <div class="col-lg-6">
                                 <div class="right-first-image">
                                     <div class="thumb">
