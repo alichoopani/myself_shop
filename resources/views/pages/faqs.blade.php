@@ -8,20 +8,20 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Services</h2>
+                        <h2>Repetitive Questions </h2>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
                 </div>
-
-                @foreach($faq as $item)
-                    <div class="col-lg-4">
-                        <div class="service-item">
-                            <h4>{{ $item->title }}</h4>
-                            <p>{{ $item->content }}</p>
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                @if(count($faq))
+                    @foreach($faq as $item)
+                        <div class="col-lg-4">
+                            <div class="service-item">
+                                <h4>{{ $item->question }}</h4>
+                                <p>{{ $item->answer }}</p>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
 
             </div>
         </div>

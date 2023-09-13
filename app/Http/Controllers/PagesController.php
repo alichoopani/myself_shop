@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -25,6 +26,14 @@ class PagesController extends Controller
 
     public function faqs()
     {
-        return view('pages.faqs');
+        $faq = Faq::query()
+            ->select([
+                'question',
+                'answer'
+            ])
+            ->where('approved', 1)
+            ->get();
+
+        return view('pages.faqs', ['faq' => $faq]);
     }
 }
