@@ -19,6 +19,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/about-us', 'App\Http\Controllers\PagesController@aboutUs')->name('aboutUs');
 Route::get('/faqs', 'App\Http\Controllers\PagesController@faqs')->name('Faqs');
 Route::view( '/contact-us', 'pages.contact-us')->name('contactUs');
+//Route::get('/products/{slug}', '')->name('Product');
 
 
 Route::get('/dashboard', function () {

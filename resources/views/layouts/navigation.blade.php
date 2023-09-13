@@ -142,15 +142,15 @@
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">FAQ's</a></li>
+                                    <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
+                                    <li><a href="{{ route('Faqs') }}">FAQ's</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:;">Tuning Parts</a>
                                 <ul>
-                                    <li><a href="#">Headers</a></li>
+{{--                                    <li><a href="{{ route('Headers') }}">Headers</a></li>--}}
                                     <li><a href="#">Cam Shafts</a></li>
                                     <li><a href="#">Crank Shaft</a></li>
                                     <li><a href="#">ECU</a></li>
