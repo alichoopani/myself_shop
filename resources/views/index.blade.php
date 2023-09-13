@@ -6,20 +6,23 @@
     <div class="main-banner" id="top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="left-content">
-                        <div class="thumb">
-                            <div class="inner-content">
-                                <h4>We Are HooniShop</h4>
-                                <span>-----------</span>
-                                <div class="main-border-button">
-                                    <a href="#">Purchase Now!</a>
+{{--                @foreach()--}}
+                    <div class="col-lg-6">
+                        <div class="left-content">
+                            <div class="thumb">
+                                <div class="inner-content">
+                                    <h4>We Are HooniShop</h4>
+                                    <span>-----------</span>
+                                    <div class="main-border-button">
+                                        <a href="#">Purchase Now!</a>
+                                    </div>
                                 </div>
+                                <img src="#" alt="">
                             </div>
-                            <img src="#" alt="">
                         </div>
                     </div>
-                </div>
+{{--                @endforeach--}}
+
                 <div class="col-lg-6">
                     <div class="right-content">
                         <div class="row">
@@ -89,27 +92,28 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4>HATS</h4>
-                                            <span>--------------</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4>Hats</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit
-                                                    incid.</p>
-                                                <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                            @foreach($camGear as $item)
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4>{{ $item->title }}</h4>
+                                                <span>{{ $item->brand->title }}</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4>Cam Gear</h4>
+                                                    <p>{{ $item->description }}</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#">Discover More</a>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <img src="{{ asset('storage/' . $item->image) }}">
                                         </div>
-                                        <img src="#">
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
