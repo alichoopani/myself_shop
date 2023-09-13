@@ -53,10 +53,28 @@ class HomeController extends Controller
             ->limit(1)
             ->get();
 
+        $camShaft = Product::query()
+            ->with(['category' => function ($query) {
+                return $query->where('approved', 1);
+            }])
+            ->where('category_id', '=', 3)
+            ->select([
+                'title',
+                'category_id',
+                'image',
+                'final_price',
+                'brand_id',
+                'description'
+            ])
+            ->where('approved', 1)
+            ->inRandomOrder()
+            ->limit(1)
+            ->get();
+
         return view('index', [
             'headers' => $headers,
             'pistons' => $pistons,
-            '',
+            'camShaft' => $camShaft,
         ]);
     }
 }
